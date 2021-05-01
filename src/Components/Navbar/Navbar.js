@@ -1,23 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { MenuItems } from "./MenuItems";
+import { Button } from "./Button";
 import './Navbar.css';
 import Appointy from '../../Assets/Appointy12.png';
 
-const Navbar = () => {
+class Navbar extends Component {
+    state = { clicked: false }
 
-    return (
-      <div className="topnav" >
-          <div className="Logo">
-            <img src={Appointy} alt="Logo"></img>
-          </div>
+    handleClick = () => {
+        this.setState({ clicked: !this.state.clicked })
+    }
 
-          <div className="topnav" id="myTopnav">
-            <a href="#account" class="active">My Account</a>
-            <a href="#team">Team</a>
-            <a href="#features">Features</a>
-          </div>
-      </div>
-    )
+    render() {
+        return(
+            <nav className="NavbarItems">
+              <div className="navbar-logo">
+                <img src={Appointy} alt="Logo"></img>
+              </div>
+                <div className="menu-icon" onClick={this.handleClick}>
+                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+                </div>
+                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                    {MenuItems.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a className={item.cName} href={item.url}>
+                                {item.title}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
+                <Button>My Account</Button>
+            </nav>
+        )
+    }
 }
 
-
-export default Navbar;
+export default Navbar
