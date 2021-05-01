@@ -1,0 +1,17 @@
+.loader {
+    position: fixed;
+    inset: 0px;
+    z-index: 100;
+    background: rgb(255, 255, 255);
+  }
+  
+  .loader_div {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    margin-left: -110px;
+    margin-top: -55px;
+    color: rgb(0, 0, 0);
+    font-family: Arial;
+    text-align: center;
+  }
