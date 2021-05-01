@@ -1,6 +1,8 @@
 import './App.css';
 import { useEffect } from 'react';
 import Loader from './Assets/Loader.gif';
+import Navbar from './Components/Navbar/Navbar';
+import Page1 from './Components/Page1/Page1';
 
 function App() {
 
@@ -20,7 +22,9 @@ function App() {
         </div>
       </div>
 
-      <h1>Hi My Calenly</h1>
+      <Navbar />
+      <Page1 />
+
     </div>
   );
 }
