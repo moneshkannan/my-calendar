@@ -2,7 +2,7 @@ import './App.css';
 import { useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Loader from './Assets/Loader.gif';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
@@ -28,7 +28,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/Login" component={Signup}/>
+          <Route exact path="/my-account" component={Signup}/>
         </Switch>
       </Router>
 

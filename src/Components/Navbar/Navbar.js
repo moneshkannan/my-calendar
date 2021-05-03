@@ -14,14 +14,14 @@ class Navbar extends Component {
         return(
             <nav className="NavbarItems">
               <div className="navbar-logo">
-                <a href="/#"><img src={Appointy} alt="Logo"></img></a>
+                <a href="/"><img src={Appointy} alt="Logo"></img></a>
               </div>
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                             <li>
-                                <a className="nav-links" href="/#">
+                                <a className="nav-links" href="/">
                                 Home
                                 </a>
                             </li>
@@ -41,9 +41,9 @@ class Navbar extends Component {
                                 </a>
                             </li>
                             <li>
-                            <Link to="/login"><a className="nav-links" href="/#">
-                                My Account
-                                </a></Link>
+                                <Link to="/my-account" style={{ textDecoration: 'none' }}>
+                                    <a className="nav-links" href="/my-account">My Account</a>
+                                </Link>
                             </li>
                 </ul>
             </nav>
@@ -51,4 +51,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default Navbar;
