@@ -1,0 +1,31 @@
+.newevents {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.newevents_main {
+    display: flex;
+}
+.newevents_items {
+    display: flex;
+    margin-left: 10vw;
+    margin-right: 10px;
+    width: 60%;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+.newevents_buttons {
+    margin-top: 0.5rem;
+}
+.newevents_button {
+    margin-right: 10px;
+}
+.newevents_col1{
+    text-align: left;
+    font-size: 40px;
+    padding: 20px;
+    margin-bottom: 30px;
+    margin-left: 2rem;
+}
+.newevents_col1_title {
+    font-family: 'Ubuntu', sans-serif;
+}
