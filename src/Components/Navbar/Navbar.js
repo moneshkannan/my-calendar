@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { MenuItems } from "./MenuItems";
-import { Button } from "./Button";
 import './Navbar.css';
 import Appointy from '../../Assets/Appointy12.png';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 class Navbar extends Component {
     state = { clicked: false }
@@ -16,7 +14,7 @@ class Navbar extends Component {
         return(
             <nav className="NavbarItems">
               <div className="navbar-logo">
-                  <Link to="/">
+                <Link to="/">
                 <img src={Appointy} alt="Logo"></img>
                 </Link>
               </div>
@@ -24,17 +22,32 @@ class Navbar extends Component {
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <a className={item.cName} href={item.url}>
-                                {item.title}
+                            <li>
+                                <a className="nav-links" href="/#">
+                                Home
                                 </a>
                             </li>
-                        )
-                    })}
+                            <li>
+                                <a className="nav-links" href="/#">
+                                Team
+                                </a>
+                            </li>
+                            <li>
+                                <a className="nav-links" href="/#">
+                                Features
+                                </a>
+                            </li>
+                            <li>
+                                <a className="nav-links" href="/#">
+                                Contact Us
+                                </a>
+                            </li>
+                            <li>
+                            <Link to="/login"><a className="nav-links" href="/#">
+                                My Account
+                                </a></Link>
+                            </li>
                 </ul>
-                <Link to="/login"><Button>My Account</Button></Link>
             </nav>
         )
     }
