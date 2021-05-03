@@ -7,6 +7,12 @@ import Loader from './Assets/Loader.gif';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 
+import Views from './Components/views/views'
+import Calendar from './Components/calendar/calendar'
+import Scheduleevent from './Components/scheduleevent/scheduleevent';
+import Confirm from './Components/confirm/confirm';
+
+
 function App() {
 
   useEffect(() => {
@@ -29,8 +35,14 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/Login" component={Signup}/>
-        </Switch>
-      </Router>
+          <Route path="/scheduleevent"><Scheduleevent/></Route>
+          <Route path="/confirm"><Confirm/></Route>
+          <Route path="/">
+          <Views/> 
+          <Calendar/> 
+          </Route>
+          </Switch>
+          </Router>
 
     </div>
   );
