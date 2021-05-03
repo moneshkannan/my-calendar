@@ -3,6 +3,7 @@ import { MenuItems } from "./MenuItems";
 import { Button } from "./Button";
 import './Navbar.css';
 import Appointy from '../../Assets/Appointy12.png';
+import {Link} from 'react-router-dom'
 
 class Navbar extends Component {
     state = { clicked: false }
@@ -31,7 +32,7 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                <Button>My Account</Button>
+                <Link to="/login"><Button>My Account</Button></Link>
             </nav>
         )
     }

@@ -1,8 +1,11 @@
 import './App.css';
 import { useEffect } from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
-import Navbar from './Components/Navbar/Navbar';
-import Page1 from './Components/Page1/Page1';
+import Signup from './pages/Signup';
+import Home from './pages/Home';
 
 function App() {
 
@@ -22,8 +25,12 @@ function App() {
         </div>
       </div>
 
-      <Navbar />
-      <Page1 />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/Login" component={Signup}/>
+        </Switch>
+      </Router>
 
     </div>
   );
