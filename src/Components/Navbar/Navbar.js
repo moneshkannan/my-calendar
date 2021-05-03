@@ -3,7 +3,6 @@ import './Navbar.css';
 import Appointy from '../../Assets/Appointy12.png';
 import {Link} from 'react-router-dom';
 
-
 class Navbar extends Component {
     state = { clicked: false }
 
