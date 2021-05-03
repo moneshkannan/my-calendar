@@ -1,5 +1,5 @@
 import React from 'react';
-import Calendar from "../CalendarMain/calendar.js";
+import Calendar from "../calendar/calendar.js";
 import "./scheduledevents.css";
 
 function ScheduledEvents() {
