@@ -9,7 +9,7 @@ const Page1 = () => {
                 <img src="https://assets.calendly.com/assets/landing/homepage/hero-c7322cf6fde0bb0e852c466af957fd7330c8e8607dfe0854947a3cc00a5dfa77.png" alt="Calendar Appointy" width= "380" height= "340"></img>
             </div>
             <div className="Text">
-                <h1>Calendly helps you schedule meetings without the back-and-forth emails</h1>
+                <h1>Appointy helps you schedule meetings without the back-and-forth emails</h1>
             </div>
             <div className="email-box">
                 <form class="email-box">

@@ -6,6 +6,11 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
+import EventsBar from './Components/Eventsbar/EventsBar';
+import Navbar from './Components/Navbar/Navbar';
+import ScheduledEvents from './Components/Scheduledevents/ScheduledEvents';
+import NewEvents from './Components/NewEvents/NewEvents';
+import Calendar from './Components/CalendarMain/calendar';
 
 import Views from './Components/views/views'
 import Calendar from './Components/calendar/calendar'
@@ -32,9 +37,9 @@ function App() {
       </div>
 
       <Router>
-        <Switch>
-          <Route exact path="/" component={Home}/>
+        <Switch> 
           <Route exact path="/Login" component={Signup}/>
+<<<<<<< HEAD
           <Route path="/scheduleevent"><Scheduleevent/></Route>
           <Route path="/confirm"><Confirm/></Route>
           <Route path="/">
@@ -43,6 +48,14 @@ function App() {
           </Route>
           </Switch>
           </Router>
+=======
+          <Route path="/dash"><Navbar/><EventsBar/><Calendar/></Route>
+          <Route path="/scheduledevents"><Navbar/><ScheduledEvents/></Route>
+          <Route path="/newevents"><Navbar/><NewEvents/></Route>
+          <Route path="/"> <Home/></Route>
+        </Switch>
+      </Router>
+>>>>>>> 99d0ccd06da117d5e6988c6503607d6afd32de9f
 
     </div>
   );

@@ -17,7 +17,7 @@ import {
   Toolbar,
   DateNavigator,
 } from '@devexpress/dx-react-scheduler-material-ui';
-import { appointments } from '../../data/appointments.js';
+import { appointments } from './appointments';
 const useStyles = makeStyles(theme => ({
   container: {
     margin: theme.spacing(2),
