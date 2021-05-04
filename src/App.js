@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
-import EventsBar from './Components/Eventsbar/EventsBar';
+// import EventsBar from './Components/Eventsbar/EventsBar';
 import Navbar from './Components/Navbar/Navbar';
 import ScheduledEvents from './Components/Scheduledevents/ScheduledEvents';
 import NewEvents from './Components/NewEvents/NewEvents';
