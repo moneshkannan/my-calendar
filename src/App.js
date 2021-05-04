@@ -49,7 +49,6 @@ function App() {
             {/* <Views /> */}
             <Calendar />
           </Route>
-
           <Route path="/scheduledevents" component={ScheduledEventspage}/>
           <Route path="/newevents" component={NewEventsPage}/>
         </Switch>
