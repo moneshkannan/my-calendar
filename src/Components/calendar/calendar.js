@@ -17,7 +17,10 @@ import {
   Toolbar,
   DateNavigator,
 } from '@devexpress/dx-react-scheduler-material-ui';
-import data from '../../data/appointments'
+
+import { appointments } from '../../data/appointments'
+
+
 const useStyles = makeStyles(theme => ({
   container: {
     margin: theme.spacing(2),
@@ -67,7 +70,7 @@ const EditingOptionsSelector = ({
     </div>
   );
 };
-export default () => {
+const Calendar = () => {
   const [data, setData] = React.useState(appointments);
   const [editingOptions, setEditingOptions] = React.useState({
     allowAdding: true,
@@ -98,21 +101,22 @@ export default () => {
   const onAddedAppointmentChange = React.useCallback((appointment) => {
     setAddedAppointment(appointment);
     setIsAppointmentBeingCreated(true);
-  });
-  const handleEditingOptionsChange = React.useCallback(({ target }) => {
+  }, []);
+  const handleEditingOptionsChange = ({ target }) => {
     const { value } = target;
     const { [value]: checked } = editingOptions;
     setEditingOptions({
       ...editingOptions,
       [value]: !checked,
     });
-  });
-  const TimeTableCell = React.useCallback(React.memo(({ onDoubleClick, ...restProps }) => (
+  };
+
+  const TimeTableCell = React.useCallback(({ onDoubleClick, ...restProps }) => (
     <WeekView.TimeTableCell
       {...restProps}
       onDoubleClick={allowAdding ? onDoubleClick : undefined}
     />
-  )), [allowAdding]);
+  ), [allowAdding]);
   const CommandButton = React.useCallback(({ id, ...restProps }) => {
     if (id === 'deleteButton') {
       return <AppointmentForm.CommandButton id={id} {...restProps} disabled={!allowDeleting} />;
@@ -172,3 +176,6 @@ export default () => {
     </React.Fragment >
   );
 };
+
+
+export default Calendar;

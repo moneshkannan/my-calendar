@@ -2,26 +2,33 @@ import './App.css';
 import { useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
-import EventsBar from './Components/Eventsbar/EventsBar';
+// import EventsBar from './Components/Eventsbar/EventsBar';
 import Navbar from './Components/Navbar/Navbar';
+<<<<<<< HEAD
 import ScheduledEvents from './Components/updatedevents/ScheduledEvents';
 import NewEvents from './Components/NewEvents/NewEvents';
+=======
+//import ScheduledEvents from './Components/Scheduledevents/ScheduledEvents';
+//import NewEvents from './Components/NewEvents/NewEvents';
+>>>>>>> 286f911d1bb40189f10de010f581ce6dad850754
 import Calendar from './Components/calendar/calendar';
 
-import Views from './Components/views/views'
+// import Views from './Components/views/views'
 
 import Scheduleevent from './Components/scheduleevent/scheduleevent';
 import Confirm from './Components/confirm/confirm';
+import ScheduledEventspage from './pages/ScheduledEventspage';
+import NewEventsPage from './pages/NewEventsPage';
 
 
 function App() {
 
   useEffect(() => {
-    window.onload = function(){
+    window.onload = function () {
       document.getElementById('loader').style.display = 'none'
     }
   })
@@ -37,6 +44,7 @@ function App() {
       </div>
 
       <Router>
+<<<<<<< HEAD
         <Switch> 
           <Route exact path="/Login" component={Signup}/>
           <Route path="/scheduleevent"><Scheduleevent/></Route>
@@ -49,6 +57,20 @@ function App() {
           <Route path="/scheduledevents"><Navbar/><ScheduledEvents/></Route>
           <Route path="/newevents"><Navbar/><NewEvents/></Route>
           <Route path="/"> <Home/></Route>
+=======
+        <Navbar/>
+        <Switch>
+          <Route exact path="/" component={Home} /> 
+          <Route exact path="/Login" component={Signup} />
+          <Route path="/scheduleevent" component={Scheduleevent} />
+          <Route path="/confirm" component={Confirm}/>
+          <Route path="/calendar">
+            {/* <Views /> */}
+            <Calendar />
+          </Route>
+          <Route path="/scheduledevents" component={ScheduledEventspage}/>
+          <Route path="/newevents" component={NewEventsPage}/>
+>>>>>>> 286f911d1bb40189f10de010f581ce6dad850754
         </Switch>
       </Router>
 

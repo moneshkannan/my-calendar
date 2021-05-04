@@ -37,12 +37,8 @@ const BackDrop = styled(motion.div)`
   transform: rotate(60deg);
   top: -290px;
   left: -70px;
-  background: rgb(241, 196, 15);
-  background: linear-gradient(
-    58deg,
-    rgba(241, 196, 15, 1) 20%,
-    rgba(243, 172, 18, 1) 100%
-  );
+  background: rgb(73, 63, 252);
+  background: linear-gradient(90deg, rgb(191, 185, 240) 0%, rgba(73,63,252,1) 100%);
 `;
 
 const HeaderContainer = styled.div`

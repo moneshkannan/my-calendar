@@ -7,11 +7,11 @@ function confirm() {
     return (
         <div className="confirmed">
             <div className="one">Confirmed!</div>
-            <br/>
-            <div className="two">You are scheduled with Codingmart</div><br/><br/><hr className="ho2"></hr>
-            <div className="price">Pricing Review</div><br/>
-            <p className="four"><img src={clock} alt="clock" class="clockimage"/> 15 min</p>
-            <p className="five"><img src={calendar} alt="calendar" class="calendarimage"/> 2.00pm Friday,May 6</p>
+            <br />
+            <div className="two">You are scheduled with Codingmart</div><br /><br /><hr className="ho2"></hr>
+            <div className="price">Pricing Review</div><br />
+            <p className="four"><img src={clock} alt="clock" className="clockimage" /> 15 min</p>
+            <p className="five"><img src={calendar} alt="calendar" className="calendarimage" /> 2.00pm Friday,May 6</p>
         </div>
     )
 }
