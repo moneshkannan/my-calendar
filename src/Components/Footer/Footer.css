@@ -1,0 +1,18 @@
+.main-footer {
+    color: white;
+    background: linear-gradient(90deg, rgb(138, 123, 247) 0%, rgb(129, 123, 247) 100%);
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 10vh;
+}
+
+.content-wrap {
+  flex: 1;
+}
