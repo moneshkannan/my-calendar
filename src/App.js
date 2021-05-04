@@ -16,7 +16,7 @@ import Calendar from './Components/calendar/calendar';
 
 import Scheduleevent from './Components/scheduleevent/scheduleevent';
 import Confirm from './Components/confirm/confirm';
-
+import Contactus from './Components/contactUs/Contactus';
 
 function App() {
 
@@ -39,16 +39,16 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/Login" component={Signup} />
+          <Route path="/"> <Home /></Route>
           <Route path="/scheduleevent"><Scheduleevent /></Route>
           <Route path="/confirm"><Confirm /></Route>
           <Route path="/calendar">
             {/* <Views /> */}
             <Calendar />
           </Route>
-
           <Route path="/scheduledevents"><Navbar /><ScheduledEvents /></Route>
           <Route path="/newevents"><Navbar /><NewEvents /></Route>
-          <Route path="/"> <Home /></Route>
+          <Route path="/contactUS" component={Contactus} />
         </Switch>
       </Router>
 

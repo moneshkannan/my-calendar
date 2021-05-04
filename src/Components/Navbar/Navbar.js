@@ -23,9 +23,7 @@ class Navbar extends Component {
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     <li>
-                        <a className="nav-links" href="/#">
-                            Home
-                                </a>
+                        <Link to="/" style={{ textDecoration: "none", color: "#fff" }}><a className="nav-links" href="#/">Home</a> </Link>
                     </li>
                     <li>
                         <a className="nav-links" href="/#">
@@ -44,7 +42,7 @@ class Navbar extends Component {
                     </li>
                     <li className="nav_btn">
                         <Link to="/login" className="myAccount" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a className="nav-myAccount" href="/#">
+                            <a className="nav-myAccount" href="#/">
                                 My Account
                                 </a>
                         </Link>
