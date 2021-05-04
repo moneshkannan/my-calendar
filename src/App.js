@@ -8,7 +8,7 @@ import Signup from './pages/Signup';
 import Home from './pages/Home';
 import EventsBar from './Components/Eventsbar/EventsBar';
 import Navbar from './Components/Navbar/Navbar';
-import ScheduledEvents from './Components/Scheduledevents/ScheduledEvents';
+import ScheduledEvents from './Components/updatedevents/ScheduledEvents';
 import NewEvents from './Components/NewEvents/NewEvents';
 import Calendar from './Components/calendar/calendar';
 
@@ -43,9 +43,9 @@ function App() {
           <Route path="/confirm"><Confirm/></Route>
           <Route path="/">
           <Views/> 
-          <Calendar/>
+       
           </Route>
-          
+          <Route path="/dash"><Navbar/><EventsBar/><Calendar/></Route>
           <Route path="/scheduledevents"><Navbar/><ScheduledEvents/></Route>
           <Route path="/newevents"><Navbar/><NewEvents/></Route>
           <Route path="/"> <Home/></Route>
