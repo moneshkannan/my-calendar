@@ -45,6 +45,8 @@ function team() {
 
         )
     }
+
+    
     return (
        
         
@@ -54,4 +56,4 @@ function team() {
     )
 }
 
-export default team
+export default team;

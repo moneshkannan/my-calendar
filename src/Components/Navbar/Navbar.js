@@ -28,9 +28,11 @@ class Navbar extends Component {
                                 </a>
                     </li>
                     <li>
+                    <Link to="/teampage">
                         <a className="nav-links" href="/#">
                             Team
                                 </a>
+                    </Link>
                     </li>
                     <li>
                         <a className="nav-links" href="/#">

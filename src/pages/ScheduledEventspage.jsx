@@ -1,5 +1,5 @@
 import React from 'react'
-import ScheduledEvents from '../Components/Scheduledevents/ScheduledEvents'
+import ScheduledEvents from '../Components/updatedevents/ScheduledEvents'
 
 function ScheduledEventspage() {
     return (

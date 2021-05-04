@@ -6,7 +6,7 @@ function ScheduledEvents() {
     return (
         <div>
             <div class="col-12 col-md-11 newevents_col1">
-                <a href="/" className="newevents_col1_title">Scheduled Events</a>
+                <a href="/" className="newevents_col1_title">Upcoming Events</a>
             </div>
             <Calendar />
         </div>
