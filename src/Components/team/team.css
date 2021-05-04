@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 .team_img{
+=======
+.grid{
+    display: flex;
+    flex-direction: row;
+    border: none;
+    margin-top: 200px;
+}
+
+.team{
+>>>>>>> b84d64ad4ca5caf18ab91776ca11b74d7037b97c
     margin-top: 0px;
     
     
@@ -14,7 +25,6 @@
 @media only screen and (max-width: 900px) {
     .grid {
         flex-direction: column;
-        margin-left: 2%;
         margin-top: 100px;
     }
 }
