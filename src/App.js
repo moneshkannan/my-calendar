@@ -40,7 +40,7 @@ function App() {
           <Route path="/scheduledevents" component={ScheduledEvents} />
           <Route path="/newevents" component={NewEvents} />
           <Route path="/contactUS" component={Contactus} />
-          <Route path="/teampage" component={Team} />
+          <Route path="/teampage"><Team /> </Route>
         </Switch>
       </Router>
     </div>

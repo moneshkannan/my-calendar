@@ -74,7 +74,7 @@ class Navbar extends Component {
 
                     <li className="nav_btn">
                         <Link to="/login" className="myAccount" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a className="nav-myAccount" href="login">  My Account</a>
+                            <a className="nav-myAccount" href="login" style={{ textDecoration: "none", color: "#fff" }}>My Account</a>
                         </Link>
                     </li>
                 </ul>
