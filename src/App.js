@@ -37,6 +37,7 @@ function App() {
       </div>
 
       <Router>
+        <Navbar/>
         <Switch>
           <Route exact path="/"> <Home /></Route>
           <Route exact path="/Login" component={Signup} />
@@ -47,8 +48,8 @@ function App() {
             <Calendar />
           </Route>
 
-          <Route path="/scheduledevents"><Navbar /><ScheduledEvents /></Route>
-          <Route path="/newevents"><Navbar /><NewEvents /></Route>
+          <Route path="/scheduledevents"><ScheduledEvents /></Route>
+          <Route path="/newevents"><NewEvents /></Route>
         </Switch>
       </Router>
 
