@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-.team_img{
-    margin-top: 0px;
-}
-
-
-=======
 .grid {
   display: flex;
   flex-direction: row;
@@ -16,7 +9,10 @@
   margin-top: 0px;
 }
 
->>>>>>> 6c28a988cbb44f96e517e26bc23611feedef6150
+.team_nav {
+  margin-top: 6rem;
+}
+
 @media only screen and (max-width: 900px) {
   .grid {
     flex-direction: column;
