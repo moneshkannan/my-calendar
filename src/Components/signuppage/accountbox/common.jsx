@@ -15,7 +15,7 @@ export const FormContainer = styled.form`
   box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.19);
 `;
 
-export const MutedLink = styled.a`
+export const MutedLink = styled.span`
   font-size: 11px;
   color: rgba(200, 200, 200, 0.8);
   font-weight: 500;
@@ -26,7 +26,18 @@ export const MutedLink = styled.a`
   }
 `;
 
-export const BoldLink = styled.a`
+export const MutedLink1 = styled.a`
+  font-size: 11px;
+  color: rgba(200, 200, 200, 0.8);
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: rgba(200, 200, 200, 0.8);
+  }
+`;
+
+export const BoldLink = styled.span`
   font-size: 11px;
   color: rgb(73, 63, 252);
   font-weight: 500;

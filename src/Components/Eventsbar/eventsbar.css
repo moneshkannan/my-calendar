@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+.eventsbar_main {
+    background-color: #F7F4F4;
+    border-color: lightgray;
+    border-width:1px;
+    border-style:solid;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+}
+.events_col1{
+    text-align: left;
+    font-size: 40px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.events_col1_title {
+    font-family: 'Ubuntu', sans-serif;
+}
+.events_col2 {
+    text-align: left;
+    padding: 20px;
+}
+.events_buttons {
+    display: flex;
+    margin-top: 30px;
+}
+.events_button {
+    margin-right: 10px;
+}
+.create_button {
+    margin-top: 50px;
+}
