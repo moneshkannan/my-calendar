@@ -1,0 +1,135 @@
+.home_img {
+  background-image: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 0.678) 0%,
+      rgba(105, 65, 145, 0.6) 35%,
+      rgba(0, 212, 255, 0.6) 98%
+    ),
+    url("../../Assets/home_3.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  width: 100%;
+  height: 100vh;
+  /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
+}
+
+.home_middle {
+  margin-top: -20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  position: relative;
+  padding: 8rem;
+  background-color: #d3d3d3;
+  /* transform: skewY(-7deg); */
+}
+
+.home_middle_content {
+  width: 50%;
+  /* transform: skewY(7deg); */
+}
+.home_middle_images {
+  width: 50%;
+  position: relative;
+  /* transform: skewY(7deg); */
+}
+
+.home_middle_img {
+  width: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline-offset: 1rem;
+  transition: all ease 200ms;
+}
+
+.home_middle_img:hover {
+  outline: 1rem solid #1b98f5;
+  transform: scale(1.1) translateY(-2rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.4);
+}
+
+.photo-1 {
+  top: -7rem;
+  left: 0;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+}
+
+.photo-2 {
+  width: 250px;
+  top: -3rem;
+  left: 9em;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+}
+
+.photo-3 {
+  left: 10%;
+  width: 250px;
+  top: 2rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+}
+
+.home_h3 {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #777;
+}
+
+.home_p {
+  font-size: 14px;
+  color: #777;
+}
+
+.home_content {
+  width: 60%;
+  position: absolute;
+  color: #fff;
+  top: 13rem;
+  left: 0;
+  margin-left: 5rem;
+}
+
+.home_content h1 {
+  font-weight: bold;
+  font-family: serif;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+}
+
+.home_content a {
+  position: relative;
+  background-color: #fff;
+  padding: 14px 40px;
+  color: #120e43;
+  border-radius: 5px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all ease 300ms;
+}
+
+.home_content a:hover {
+  color: #fff;
+  background-color: #12afe87c;
+}
+
+.home_learn_more {
+  background-color: #1b98f5;
+  padding: 14px 40px;
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  text-decoration: none;
+  transform: all ease 500ms;
+  transform: scale(1.5) !important;
+}

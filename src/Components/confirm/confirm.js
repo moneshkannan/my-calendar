@@ -1,5 +1,5 @@
-import React from 'react'
-import './confirm.css'
+import React from 'react';
+import './confirm.css';
 import clock from "../../Assets/clock.png";
 import calendar from "../../Assets/calendar.svg";
 
@@ -13,7 +13,7 @@ function confirm() {
             <p className="four"><img src={clock} alt="clock" className="clockimage" /> 15 min</p>
             <p className="five"><img src={calendar} alt="calendar" className="calendarimage" /> 2.00pm Friday,May 6</p>
         </div>
-    )
+    );
 }
 
 export default confirm;

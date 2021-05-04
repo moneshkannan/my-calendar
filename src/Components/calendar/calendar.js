@@ -17,8 +17,8 @@ import {
   Toolbar,
   DateNavigator,
 } from '@devexpress/dx-react-scheduler-material-ui';
-
 import { appointments } from '../../data/appointments'
+import Navbar from '../Navbar/Navbar';
 
 
 const useStyles = makeStyles(theme => ({
@@ -131,8 +131,11 @@ const Calendar = () => {
     () => allowResizing && allowUpdating,
     [allowResizing, allowUpdating],
   );
+
+
   return (
     <React.Fragment>
+      <Navbar active={true} />
       <EditingOptionsSelector
         options={editingOptions}
         onOptionsChange={handleEditingOptionsChange}
