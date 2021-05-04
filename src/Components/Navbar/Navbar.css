@@ -184,6 +184,7 @@
   .nav-links:hover {
     background-color: #7577fa;
     border-radius: 0;
+    padding: 2rem 0;
   }
 
   .navbar-logo {
@@ -215,5 +216,9 @@
     font-size: 2rem;
     transform: rotate(-180deg);
     transition: all 500ms linear;
+  }
+
+  .myAccount {
+    top: 30px;
   }
 }
