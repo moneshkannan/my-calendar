@@ -114,6 +114,7 @@
   background-color: rgba(255, 255, 255, 0.411);
   transition: all 200ms;
   z-index: 1;
+  border-radius: 5px;
 }
 
 .myAccount {
@@ -127,12 +128,14 @@
 
 .myAccount:hover::before {
   width: 100%;
+  border-radius: 5px;
 }
 
 .nav-myAccount {
   color: #fff;
   text-decoration: none;
   list-style: none;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 960px) {
