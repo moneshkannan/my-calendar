@@ -23,7 +23,7 @@ class Navbar extends Component {
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     <li>
-                        <a className="nav-links" href="/#">
+                        <a className="nav-links" href="/">
                             Home
                                 </a>
                     </li>
@@ -44,7 +44,7 @@ class Navbar extends Component {
                     </li>
                     <li className="nav_btn">
                         <Link to="/login" className="myAccount" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a className="nav-myAccount" href="/#">
+                            <a className="nav-myAccount" href="/login" style={{ textDecoration: "none", color: "#fff" }}>
                                 My Account
                                 </a>
                         </Link>
@@ -56,4 +56,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default Navbar;

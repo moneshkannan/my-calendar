@@ -38,6 +38,7 @@ function App() {
 
       <Router>
         <Switch>
+          <Route exact path="/"> <Home /></Route>
           <Route exact path="/Login" component={Signup} />
           <Route path="/scheduleevent"><Scheduleevent /></Route>
           <Route path="/confirm"><Confirm /></Route>
@@ -48,7 +49,6 @@ function App() {
 
           <Route path="/scheduledevents"><Navbar /><ScheduledEvents /></Route>
           <Route path="/newevents"><Navbar /><NewEvents /></Route>
-          <Route path="/"> <Home /></Route>
         </Switch>
       </Router>
 
