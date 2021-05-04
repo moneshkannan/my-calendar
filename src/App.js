@@ -40,10 +40,9 @@ function App() {
           <Route path="/scheduledevents" component={ScheduledEvents} />
           <Route path="/newevents" component={NewEvents} />
           <Route path="/contactUS" component={Contactus} />
-          <Route path="/team" component={Team} />
+          <Route path="/teampage" component={Team} />
         </Switch>
       </Router>
-      <div style={{ marginBottom: "400px" }}></div>
     </div>
   );
 }

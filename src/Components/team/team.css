@@ -1,10 +1,17 @@
-.grid{
-    display: flex;
-    flex-direction: row;
-    border: none;
-    margin-top: 100px;
+.grid {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  margin-top: 200px;
 }
 
-.team{
-    margin-top: 0px;
+.team {
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 900px) {
+  .grid {
+    flex-direction: column;
+    margin-top: 100px;
+  }
 }
