@@ -84,6 +84,8 @@
 
 .fa-bars {
   color: #fff;
+  transform: rotate(180deg);
+  transition: all 500ms linear;
 }
 
 .menu-icon {
@@ -190,5 +192,7 @@
   .fa-times {
     color: #fff;
     font-size: 2rem;
+    transform: rotate(-180deg);
+    transition: all 500ms linear;
   }
 }
