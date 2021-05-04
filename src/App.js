@@ -8,13 +8,12 @@ import Signup from './pages/Signup';
 import Home from './pages/Home';
 // import EventsBar from './Components/Eventsbar/EventsBar';
 import Navbar from './Components/Navbar/Navbar';
-import ScheduledEvents from './Components/Scheduledevents/ScheduledEvents';
-import NewEvents from './Components/NewEvents/NewEvents';
+import ScheduledEvents from './pages/ScheduledEventspage';
+import NewEvents from './pages/NewEventsPage';
 import Calendar from './Components/calendar/calendar';
 
 // import Views from './Components/views/views'
 
-import Scheduleevent from './Components/scheduleevent/scheduleevent';
 import Confirm from './Components/confirm/confirm';
 import Contactus from './Components/contactUs/Contactus';
 
@@ -37,25 +36,20 @@ function App() {
       </div>
 
       <Router>
-
         <Navbar />
-
         <Switch>
-          <Route exact path="/"> <Home /></Route>
+          <Route exact path="/" component={Home} />
           <Route exact path="/Login" component={Signup} />
-          <Route path="/scheduleevent"><Scheduleevent /></Route>
-          <Route path="/confirm"><Confirm /></Route>
+          <Route path="/confirm" component={Confirm} />
           <Route path="/calendar">
-            {/* <Views /> */}
             <Calendar />
           </Route>
-          <Route path="/scheduledevents"><Navbar /><ScheduledEvents /></Route>
-          <Route path="/newevents"><Navbar /><NewEvents /></Route>
+          <Route path="/scheduledevents" component={ScheduledEvents} />
+          <Route path="/newevents" component={NewEvents} />
           <Route path="/contactUS" component={Contactus} />
         </Switch>
       </Router>
 
-      {/* <div style={{ marginBottom: '500px' }}> </div> */}
     </div>
   );
 }

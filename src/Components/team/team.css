@@ -1,0 +1,10 @@
+.grid{
+    display: flex;
+    flex-direction: row;
+    border: none;
+    margin-top: 100px;
+}
+
+.team{
+    margin-top: 0px;
+}

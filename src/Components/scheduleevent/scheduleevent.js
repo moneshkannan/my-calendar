@@ -26,14 +26,14 @@ function scheduleevent() {
             <div className="details">Enter Details</div><br/>
             <div className="name">
             <label>Name</label><br/>
-            <input type="text" id="name" className="intname"></input></div>
+            <input type="text" id="name" className="intname mb-1 form-control"></input></div>
             <div className="email">
             <label>Email</label><br/>
-            <input type="text" id="email" className="emailtext"></input></div><br/>
+            <input type="text" id="email" className="emailtext mb-1 form-control"></input></div><br/>
 
             <div className="submit">
                 <Link to ="/confirm">
-                <button>Schedule Event</button>
+                <button className="btn btn-primary  text-center">Schedule Event</button>
                 </Link>
             </div>
 
