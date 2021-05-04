@@ -1,22 +1,46 @@
 import React from 'react';
-import './Page1.css';
+import './page.css';
+import calendar1 from "../../Assets/calendar1.jpeg";
+import calendar2 from "../../Assets/calendar2.jpg";
+import calendar3 from "../../Assets/calendar3.webp";
 
 const Page1 = () => {
-
     return (
         <div>
-            <div className="page1">
-                <img src="https://assets.calendly.com/assets/landing/homepage/hero-c7322cf6fde0bb0e852c466af957fd7330c8e8607dfe0854947a3cc00a5dfa77.png" alt="Calendar Appointy" width= "380" height= "340"></img>
-            </div>
-            <div className="Text">
+            <div className="home_img" />
+            <div className="home_content">
                 <h1>Appointy helps you schedule meetings without the back-and-forth emails</h1>
+                <a href="/#">Schedule</a>
             </div>
-            <div className="email-box">
-                <form class="email-box">
-                    <input type="email" placeholder="Enter your email"/>
-                    <input type="submit" value="Sign Up"/>
-                </form>
+
+            <div className="home_middle">
+
+                <div className="home_middle_content">
+                    <div>
+                        <h3 className="home_h3">you will now goin yo laern more</h3>
+                        <p className="home_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                        corporis sunt qui incidunt praesentium dolorem quos officiis minus
+                        nihil totam tempora cor Lorem ipsum dolor sit amet consectetur
+              adipisicing elit</p>
+                    </div>
+                    <div style={{ marginTop: "25px", marginBottom: "40px" }}>
+                        <h3 className="home_h3">you will now goin yo laern more</h3>
+                        <p className="home_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                        corporis sunt qui incidunt praesentium dolorem quos officiis minus
+                        nihil totam tempora cor Lorem ipsum dolor sit amet consectetur
+              adipisicing elit</p>
+                    </div>
+                    <a className="home_learn_more" href="/#"> Learn More  </a>
+                </div>
+                <div className="home_middle_images">
+                    <div className="home_middle_image">
+                        <img alt="home_middle_images" className="home_middle_img photo-1" src={calendar1} />
+                        <img alt="home_middle_images" className="home_middle_img photo-2" src={calendar2} />
+                        <img alt="home_middle_images" className="home_middle_img photo-3" src={calendar3} />
+                    </div>
+                </div>
             </div>
+
         </div>
     )
 }

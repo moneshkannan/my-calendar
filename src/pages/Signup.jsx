@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Navbar from "../Components/Navbar/Navbar";
 import { AccountBox } from "../Components/signuppage/accountbox";
 
 const AppContainer = styled.div`
@@ -16,6 +17,7 @@ const AppContainer = styled.div`
 function Signup() {
   return (
     <div>
+      <Navbar active={true} />
       <AppContainer>
         <AccountBox />
       </AppContainer>

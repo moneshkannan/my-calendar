@@ -6,17 +6,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
-// import EventsBar from './Components/Eventsbar/EventsBar';
-import Navbar from './Components/Navbar/Navbar';
 import ScheduledEvents from './pages/ScheduledEventspage';
 import NewEvents from './pages/NewEventsPage';
 import Calendar from './Components/calendar/calendar';
-
-// import Views from './Components/views/views'
-
-
-
-
 import Confirm from './Components/confirm/confirm';
 import Contactus from './Components/contactUs/Contactus';
 import Team from './Components/team/team';
@@ -40,21 +32,18 @@ function App() {
       </div>
 
       <Router>
-        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/Login" component={Signup} />
+          <Route path="/Login" component={Signup} />
           <Route path="/confirm" component={Confirm} />
-          <Route path="/calendar">
-            <Calendar />
-          </Route>
+          <Route path="/calendar" component={Calendar} />
           <Route path="/scheduledevents" component={ScheduledEvents} />
           <Route path="/newevents" component={NewEvents} />
           <Route path="/contactUS" component={Contactus} />
           <Route path="/team" component={Team} />
         </Switch>
       </Router>
-
+      <div style={{ marginBottom: "400px" }}></div>
     </div>
   );
 }
