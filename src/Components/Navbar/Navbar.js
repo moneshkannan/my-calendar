@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 class Navbar extends Component {
     state = {
         clicked: false,
-        active: false
+        active: this.props.active,
+        valid: this.props.active
     }
 
 
@@ -16,11 +17,13 @@ class Navbar extends Component {
     }
 
     handleScroll = () => {
-        if (window.scrollY >= 1) {
-            this.setState({ active: true });
-        }
-        else {
-            this.setState({ active: false });
+        if (!this.state.valid) {
+            if (window.scrollY >= 100) {
+                this.setState({ active: true });
+            }
+            else {
+                this.setState({ active: false });
+            }
         }
     }
 

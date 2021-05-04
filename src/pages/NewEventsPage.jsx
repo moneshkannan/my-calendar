@@ -1,12 +1,14 @@
-import React from 'react'
-import NewEvents from '../Components/NewEvents/NewEvents'
+import React from "react";
+import Navbar from "../Components/Navbar/Navbar";
+import NewEvents from "../Components/NewEvents/NewEvents";
 
 function NewEventsPage() {
-    return (
-        <div>
-            <NewEvents/>
-        </div>
-    )
+  return (
+    <div>
+      <Navbar active={true} />
+      <NewEvents />
+    </div>
+  );
 }
 
-export default NewEventsPage
+export default NewEventsPage;
