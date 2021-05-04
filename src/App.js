@@ -14,8 +14,12 @@ import Calendar from './Components/calendar/calendar';
 
 // import Views from './Components/views/views'
 
+
+
+
 import Confirm from './Components/confirm/confirm';
 import Contactus from './Components/contactUs/Contactus';
+import Team from './Components/team/team';
 
 function App() {
 
@@ -47,6 +51,7 @@ function App() {
           <Route path="/scheduledevents" component={ScheduledEvents} />
           <Route path="/newevents" component={NewEvents} />
           <Route path="/contactUS" component={Contactus} />
+          <Route path="/team" component={Team} />
         </Switch>
       </Router>
 
