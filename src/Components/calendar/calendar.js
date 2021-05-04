@@ -17,7 +17,6 @@ import {
   Toolbar,
   DateNavigator,
 } from '@devexpress/dx-react-scheduler-material-ui';
-
 import { appointments } from '../../data/appointments'
 
 

@@ -1,14 +1,26 @@
 .NavbarItems {
-  background: linear-gradient(
-    90deg,
-    rgb(191, 185, 240) 0%,
-    rgba(73, 63, 252, 1) 100%
-  );
-  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  transition: all ease 800ms;
+  z-index: 100;
+  color: #6668f4;
+}
+
+.navbar_active {
+  background-image: linear-gradient(
+    90deg,
+    rgb(191, 185, 240) 0%,
+    rgba(73, 63, 252, 1) 100%
+  );
+  transition: all ease 800ms;
+  z-index: 100;
 }
 
 .navbar-logo {
@@ -19,7 +31,7 @@
 }
 
 .navbar-logo img {
-  width: 250px;
+  width: 180px;
 }
 
 .nav-menu {
@@ -74,7 +86,7 @@
   transform: scaleX(1);
 }
 .nav-links:hover {
-  background-color: #6d76f7;
+  /* background-color: #6d76f7; */
   border-radius: 4px;
   transition: all 0.2s ease-out;
   text-decoration: none;
@@ -125,7 +137,7 @@
 
 @media screen and (max-width: 960px) {
   .NavbarItems {
-    position: relative;
+    position: fixed;
   }
 
   .nav-links::before {
@@ -139,19 +151,23 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px;
+    height: 100vh;
     position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
+    top: 60px;
+    left: 0%;
+    clip-path: circle(100px at 90% -20%);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 700ms ease;
   }
 
   .nav-menu.active {
     background: #6668f4;
     left: 0;
+    clip-path: circle(1200px at 90% -20%);
+    pointer-events: all;
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.7s ease;
     z-index: 100;
   }
 
@@ -175,8 +191,9 @@
   }
 
   .navbar-logo img {
-    width: 150px;
-    margin-left: -20px;
+    width: 180px;
+    margin-left: -30px;
+    margin-top: -8px;
   }
 
   .menu-icon {
@@ -187,6 +204,7 @@
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
+    margin-top: -8px;
   }
 
   .fa-times {

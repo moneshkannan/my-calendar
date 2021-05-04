@@ -8,20 +8,13 @@ import Signup from './pages/Signup';
 import Home from './pages/Home';
 import EventsBar from './Components/Eventsbar/EventsBar';
 import Navbar from './Components/Navbar/Navbar';
-import ScheduledEvents from './Components/updatedevents/ScheduledEvents';
-import NewEvents from './Components/NewEvents/NewEvents';
-//import ScheduledEvents from './Components/Scheduledevents/ScheduledEvents';
-//import NewEvents from './Components/NewEvents/NewEvents';
+import ScheduledEvents from './pages/ScheduledEventspage';
+import NewEvents from './pages/NewEventsPage';
 import Calendar from './Components/calendar/calendar';
-
 import Views from './Components/views/views'
-
-import Scheduleevent from './Components/scheduleevent/scheduleevent';
 import Confirm from './Components/confirm/confirm';
-import ScheduledEventspage from './pages/ScheduledEventspage';
-import NewEventsPage from './pages/NewEventsPage';
-import Team from './Components/team/team'
-
+import Contactus from './Components/contactUs/Contactus';
+import Team from './Components/team/team';
 
 function App() {
 
@@ -42,31 +35,16 @@ function App() {
       </div>
 
       <Router>
-        <Switch> 
-          <Route exact path="/Login" component={Signup}/>
-          <Route path="/scheduleevent"><Scheduleevent/></Route>
-          <Route path="/confirm"><Confirm/></Route>
-          <Route path="/">
-          <Views/> 
-       
-          </Route>
-          <Route path="/dash"><Navbar/><EventsBar/><Calendar/></Route>
-          <Route path="/scheduledevents"><Navbar/><ScheduledEvents/></Route>
-          <Route path="/newevents"><Navbar/><NewEvents/></Route>
-          <Route path="/"> <Home/></Route>
-          <Navbar/>
-       
-          <Route exact path="/" component={Home} /> 
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
           <Route exact path="/Login" component={Signup} />
-          <Route path="/scheduleevent" component={Scheduleevent} />
-          <Route path="/confirm" component={Confirm}/>
-          <Route path="/calendar">
-            <Views />
-            <Calendar />
-          </Route>
-          <Route path="/scheduledevents" component={ScheduledEventspage}/>
-          <Route path="/newevents" component={NewEventsPage}/>
-          <Route path="/teampage"><Navbar/><Team/></Route>
+          <Route path="/confirm" component={Confirm} />
+          <Route path="/calendar" component={Calendar}/>
+          <Route path="/scheduledevents" component={ScheduledEvents} />
+          <Route path="/newevents" component={NewEvents} />
+          <Route path="/contactUS" component={Contactus} />
+          <Route path="/teampage" component={Team} />
         </Switch>
       </Router>
 

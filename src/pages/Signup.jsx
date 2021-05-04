@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 import { AccountBox } from "../Components/signuppage/accountbox";
 
@@ -10,17 +10,17 @@ const AppContainer = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  margin-top: 30px;
+  margin-top: 8rem;
 `;
 
 function Signup() {
-    return (
-        <div>
-            <AppContainer>
-                <AccountBox />
-            </AppContainer>
-        </div>
-    )
+  return (
+    <div>
+      <AppContainer>
+        <AccountBox />
+      </AppContainer>
+    </div>
+  );
 }
 
-export default Signup
+export default Signup;
