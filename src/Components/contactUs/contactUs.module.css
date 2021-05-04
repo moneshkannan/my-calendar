@@ -1,0 +1,95 @@
+.contactus {
+  background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 0.651) 0%,
+      rgba(44, 9, 121, 0.651) 35%,
+      rgba(0, 213, 255, 0.651) 98%
+    ),
+    url("../../Assets/contact.jpg");
+
+  background-position: 50% 50%;
+  background-size: cover;
+  object-fit: contain;
+  height: 420px;
+  width: 100%;
+}
+
+.content {
+  padding-top: 32rem;
+  color: #000;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.text {
+  width: 40%;
+}
+.content_img {
+  width: 400px;
+}
+
+.contactus_header {
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.contactUs_para {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .contactUs_para {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 862px) {
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .text {
+    width: 70%;
+  }
+  .content_img {
+    display: block;
+    width: 300px;
+  }
+
+  .contactus_header {
+    font-size: 44px;
+    font-weight: 600;
+    padding-bottom: 10px;
+  }
+
+  .contactUs_para {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 500px) {
+  .contactus_header {
+    font-size: 40px;
+    font-weight: 600;
+    padding-bottom: 10px;
+  }
+
+  .contactUs_para {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .content_img {
+    display: block;
+    width: 250px;
+  }
+}

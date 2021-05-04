@@ -37,9 +37,12 @@ function App() {
       </div>
 
       <Router>
+
+        <Navbar />
+
         <Switch>
+          <Route exact path="/"> <Home /></Route>
           <Route exact path="/Login" component={Signup} />
-          <Route path="/"> <Home /></Route>
           <Route path="/scheduleevent"><Scheduleevent /></Route>
           <Route path="/confirm"><Confirm /></Route>
           <Route path="/calendar">
@@ -52,6 +55,7 @@ function App() {
         </Switch>
       </Router>
 
+      {/* <div style={{ marginBottom: '500px' }}> </div> */}
     </div>
   );
 }
