@@ -1,5 +1,6 @@
 import React from "react";
 import Team from "../../Assets/team.jpg";
+import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import './team.css'
 
@@ -17,7 +18,7 @@ const team = () => {
           </h2>
         <p className="grey-text w-responsive mx-auto mb-5">
           Appointy helps you schedule meetings without the back-and-forth emails. Appointy allows you to schedule the meetings, manage users into your application and also allows you to retrieve appointy links.
-          </p><img src={Team} className="team_img" alt="" />
+          </p><img src={Team} className="team_img" alt="ourteam" />
         <div className="Row">
           <div lg="3" md="6" className="mb-lg-0 mb-5">
             <div className="rounded-circle" />
@@ -42,6 +43,7 @@ const team = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
