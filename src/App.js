@@ -17,6 +17,7 @@ import { ProtectedRoute } from "./service/routeGuard";
 import Notification from './service/NotificationService';
 import history from "./utils/history";
 import Errorpage from './pages/Errorpage';
+import AccPage from './Components/AccPage/MyAcc';
 import LoginForm from './pages/LoginForm';
 import SignupForm from './pages/SignupForm';
 
@@ -38,6 +39,7 @@ const App = () => {
           <img src={Loader} alt="Loading..." width="250"></img>
         </div>
       </div>
+      
 
 
       <Router history={history}>
@@ -51,6 +53,7 @@ const App = () => {
           <Route path="/scheduleevent" component={Scheduleevent} />
           <Route path="/newevents" component={NewEvents} />
           <Route path="/contactUS" component={Contactus} />
+          <Route path="/accpage"><AccPage/></Route>
           <Route path="/teampage" component={Team}/>
           <ProtectedRoute path="/contactUS" component={Contactus} />
           <Route component={Errorpage} />
