@@ -38,7 +38,7 @@ function Footer() {
             <hr />
             <div className="row">
             <p className="col-sm" style={{textAlign:"center"}}>
-                © Appointy | All rights reserved | Terms Of Service | Privacy
+                © Copyright 2021 Appointy | All rights reserved | Terms Of Service | Privacy
             </p>
             </div>
         </div>
