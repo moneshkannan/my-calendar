@@ -5,7 +5,6 @@ import './App.css';
 import { Router, Route, Switch } from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
 import Home from './pages/Home';
-// import NewEvents from './pages/NewEventsPage';
 import Calendar from './Components/calendar/calendar';
 import Scheduleevent from './Components/scheduleevent/scheduleevent'
 import Confirm from './Components/confirm/confirm';
@@ -15,10 +14,11 @@ import { ProtectedRoute, AdminRoute } from "./service/routeGuard";
 import Notification from './service/NotificationService';
 import history from "./utils/history";
 import Errorpage from './pages/Errorpage';
-import { ForgotForm } from './Components/signuppage/accountbox/Forgotpassword';
 import AccPage from './Components/AccPage/MyAcc';
 import LoginForm from './pages/LoginForm';
 import SignupForm from './pages/SignupForm';
+import Forgotform from './pages/Forgotform';
+import otpform from './pages/otpform';
 
 
 const App = () => {
@@ -47,13 +47,14 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/Login" component={LoginForm} />
           <Route path="/signup" component={SignupForm} />
+          <Route path="/Forgotpassword" component={Forgotform} />
+          <Route path="/Otp" component={otpform} />
           <Route path="/confirm" component={Confirm} />
           <ProtectedRoute path="/calendar" component={Calendar} />
           <AdminRoute path="/scheduleevent" component={Scheduleevent} />
           <Route path="/accpage" component={AccPage} />
           <ProtectedRoute path="/contactUS" component={Contactus} />
           <Route path="/teampage" component={Team} />
-          <Route path="/forgot_form" component={ForgotForm} />
           <Route path="**" component={Errorpage} />
         </Switch>
       </Router>

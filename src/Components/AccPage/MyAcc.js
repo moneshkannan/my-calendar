@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import "./myacc.css";
+import Navbar from '../Navbar/Navbar'
+
 
 
 
@@ -169,4 +171,4 @@ function MyAcc() {
     )
 }
 
-export default MyAcc
+export default MyAcc;
