@@ -1,8 +1,12 @@
 import React from 'react';
 import "./myacc.css";
+import Navbar from '../Navbar/Navbar'
+
 
 function MyAcc() {
     return (
+        <>
+        <Navbar active={true}/>
         <div>
             <div class="container">
             <div class="main-body">            
@@ -160,7 +164,8 @@ function MyAcc() {
                 </div>
             </div>
         </div>
-    )
+        </>
+    );
 }
 
-export default MyAcc
+export default MyAcc;
