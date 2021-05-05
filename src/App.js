@@ -15,6 +15,7 @@ import Team from './Components/team/team';
 import { ProtectedRoute } from "./service/routeGuard";
 import Notification from './service/NotificationService';
 import history from "./utils/history";
+import Errorpage from './pages/Errorpage';
 
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/newevents" component={NewEvents} />
           <ProtectedRoute path="/contactUS" component={Contactus} />
           <Route path="/teampage"><Team /> </Route>
+          <Route component={Errorpage} />
         </Switch>
       </Router>
     </div>
