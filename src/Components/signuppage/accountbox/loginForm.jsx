@@ -18,6 +18,7 @@ import Notification from "../../../service/NotificationService";
 
 export function LoginForm(props) {
   const { switchToSignup } = useContext(AccountContext);
+  const { switchToForgot } = useContext(AccountContext);
 
   const [data, setData] = useState({
     email: "",
@@ -84,7 +85,7 @@ export function LoginForm(props) {
         />
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
-      <MutedLink1 href="">Forget your password?</MutedLink1>
+      <MutedLink1 onClick={switchToForgot}>Forget your password?</MutedLink1>
       <Marginer direction="vertical" margin="1.6em" />
       <SubmitButton
         type="submit"
