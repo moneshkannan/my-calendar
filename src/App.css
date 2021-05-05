@@ -26,3 +26,16 @@ a {
   font-family: Arial;
   text-align: center;
 }
+label {
+  font-size: 0.8rem;
+}
+
+input.form-control, input.form-control:focus {
+  background: #F0F0FF;
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-size: .6rem;
+}

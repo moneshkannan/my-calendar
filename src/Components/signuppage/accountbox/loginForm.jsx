@@ -1,4 +1,4 @@
-import React, { useContext,useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   BoldLink,
   BoxContainer,
@@ -10,55 +10,88 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
-import axios from "axios"
+import { storedataInlocalStorage } from "../../../service/authCheck";
+import history from "../../../utils/history";
+import API from "../../../service/api";
+import axios from "axios";
+import Notification from "../../../service/NotificationService";
 
 export function LoginForm(props) {
   const { switchToSignup } = useContext(AccountContext);
+  const { switchToForgot } = useContext(AccountContext);
 
   const [data, setData] = useState({
-    email:"",
-    password:"",
-  })
+    email: "",
+    password: "",
+  });
 
-  const url ="https://appointy-backend.herokuapp.com/api/v1/login"
+  const [isLoading, setIsLoading] = useState(false);
+
   const handle = (e) => {
-    const newData = {...data};
+    const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(newData);
-  }
+  };
 
-  const submit = (e) =>{
+  const submit = (e) => {
+    setIsLoading(true);
     e.preventDefault();
-    console.log("submit")
-    axios.post(url, {
-      email : data.email,
-      password : data.password,
-    })
-    .then(
-      res =>{
-        console.log(res.data)
-      }
-    )
-    window.alert("Login Successfully")
-  }
+    const requestData = {
+      email: data.email,
+      password: data.password,
+    };
+    axios
+      .post(`${API}/login`, requestData)
+      .then((res) => {
+        storedataInlocalStorage(res.data.response_data);
+        Notification.show(res.data);
+        history.push("/");
+        setIsLoading(false);
+        return;
+      })
+      .catch((err) => {
+        if (err.response) {
+          setIsLoading(false);
+          Notification.show(err.response.data);
+          history.push("/login");
+        }
+      });
+  };
 
   return (
     <BoxContainer>
       <FormContainer onSubmit={(e)=>{submit(e)}}>
-        <Input type="email" placeholder="Email" value={data.email} id ="email" onChange={(e) => {handle(e)}}/>
-        <Input type="password" placeholder="Password" value={data.password} id ="password" onChange={(e) => {handle(e)}}/>
+        <Input 
+          type="email" 
+          placeholder="Email" 
+          value={data.email} 
+          id ="email" 
+          onChange={(e) => {handle(e)}}
+        />
+        <Input 
+          type="password" 
+          placeholder="Password" 
+          value={data.password} 
+          id ="password" 
+          onChange={(e) => {handle(e)}}
+          />
+
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
-      <MutedLink1 href="">Forget your password?</MutedLink1>
+      <MutedLink1 onClick={switchToForgot}>Forget your password?</MutedLink1>
       <Marginer direction="vertical" margin="1.6em" />
-      <SubmitButton type="submit" onClick={(e)=>{submit(e)}}>Signin</SubmitButton>
-      <Marginer direction="vertical" margin="1em"/>
+      <SubmitButton
+        type="submit"
+        onClick={(e) => {
+          submit(e);
+        }}
+      >
+        {isLoading ? <i className="bx bx-loader-circle bx-spin"></i> : "Signin"}
+      </SubmitButton>
+      <Marginer direction="vertical" margin="1em" />
       <MutedLink>
         Don't have an account?{" "}
-        <BoldLink onClick={switchToSignup}>
-          Signup
-        </BoldLink>
+        <BoldLink onClick={switchToSignup}>Signup</BoldLink>
       </MutedLink>
     </BoxContainer>
   );
