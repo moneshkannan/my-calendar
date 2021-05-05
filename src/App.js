@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
-import Signup from './pages/Signup';
+//import Signup from './pages/Signup';
 import Home from './pages/Home';
 import ScheduledEvents from './pages/ScheduledEventspage';
 import NewEvents from './pages/NewEventsPage';
@@ -13,6 +13,9 @@ import Confirm from './Components/confirm/confirm';
 import Contactus from './Components/contactUs/Contactus';
 import Team from './Components/team/team';
 import Errorpage from './pages/Errorpage';
+// import SignupForm from './pages/SignupForm';
+import LoginForm from './pages/LoginForm';
+import SignupForm from './pages/SignupForm';
 
 function App() {
 
@@ -35,7 +38,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Login" component={Signup} />
+          <Route path="/Login" component={LoginForm} />
+          <Route path="/signup" component={SignupForm}/>
           <Route path="/confirm" component={Confirm} />
           <Route path="/calendar" component={Calendar} />
           <Route path="/scheduledevents" component={ScheduledEvents} />

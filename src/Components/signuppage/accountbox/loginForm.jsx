@@ -46,8 +46,20 @@ export function LoginForm(props) {
   return (
     <BoxContainer>
       <FormContainer onSubmit={(e)=>{submit(e)}}>
-        <Input type="email" placeholder="Email" value={data.email} id ="email" onChange={(e) => {handle(e)}}/>
-        <Input type="password" placeholder="Password" value={data.password} id ="password" onChange={(e) => {handle(e)}}/>
+        <Input 
+          type="email" 
+          placeholder="Email" 
+          value={data.email} 
+          id ="email" 
+          onChange={(e) => {handle(e)}}
+        />
+        <Input 
+          type="password" 
+          placeholder="Password" 
+          value={data.password} 
+          id ="password" 
+          onChange={(e) => {handle(e)}}
+          />
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
       <MutedLink1 href="">Forget your password?</MutedLink1>
