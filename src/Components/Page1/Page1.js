@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './page.css';
 import calendar1 from "../../Assets/calendar1.jpeg";
 import calendar2 from "../../Assets/calendar2.jpg";
@@ -10,7 +11,7 @@ const Page1 = () => {
             <div className="home_img" />
             <div className="home_content">
                 <h1>Appointy helps you schedule meetings without the back-and-forth emails</h1>
-                <a href="/#">Schedule</a>
+                <Link className="p-links" to="/scheduleevent">Schedule</Link>
             </div>
 
             <div className="home_middle">

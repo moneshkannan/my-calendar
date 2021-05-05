@@ -7,6 +7,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
     return <Route {...rest} render={props => {
         const isLoggedin = isLoggedIn();
         if (!isLoggedin) {
+            Notification.show({ status: false, message: "Please Login to Continue.." });
             return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
         }
         else {
@@ -19,12 +20,17 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 const AdminRoute = ({ component: Component, ...rest }) => {
     return <Route {...rest} render={props => {
         const isAdmIn = isAdmin()
-        if (!isAdmIn) {
+        const isLoggedin = isLoggedIn();
+        if (!isLoggedin) {
+            Notification.show({ status: false, message: "Please Login to Continue.." });
+            return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
+        }
+        else if (!isAdmIn) {
             Notification.show({ status: false, message: "You don't have permission to access this page" });
-            < Redirect to={{ pathname: '/', state: { from: props.location } }} />
+            return < Redirect to={{ pathname: '/', state: { from: props.location } }} />
         }
         else {
-            <Component {...props} />
+            return < Component {...props} />
         }
     }}
     />

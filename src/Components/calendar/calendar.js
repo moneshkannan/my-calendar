@@ -10,7 +10,10 @@ import {
   TodayButton,
 } from '@devexpress/dx-react-scheduler-material-ui';
 
+
+
 import { appointments } from '../../data/appointments';
+import Navbar from '../Navbar/Navbar';
 
 
 export default class Demo extends React.PureComponent {
@@ -19,7 +22,7 @@ export default class Demo extends React.PureComponent {
 
     this.state = {
       data: appointments,
-      currentDate: new Date(),
+      currentDate: new Date()
     };
     this.currentDateChange = (currentDate) => { this.setState({ currentDate }); };
   }
@@ -28,27 +31,29 @@ export default class Demo extends React.PureComponent {
     const { data, currentDate } = this.state;
 
     return (
-
-      <Paper>
-        <Scheduler
-          data={data}
-          height={660}
-        >
-          <ViewState
-            currentDate={currentDate}
-            onCurrentDateChange={this.currentDateChange}
-          />
-          <WeekView
-            startDayHour={9}
-            endDayHour={19}
-          />
-          <Toolbar />
-          <DateNavigator />
-          <TodayButton />
-          <Appointments />
-        </Scheduler>
-      </Paper>
-
+      <>
+        <Navbar active={true} />
+        <div style={{ marginTop: "5rem" }}></div>
+        <Paper>
+          <Scheduler
+            data={data}
+            height={660}
+          >
+            <ViewState
+              currentDate={currentDate}
+              onCurrentDateChange={this.currentDateChange}
+            />
+            <WeekView
+              startDayHour={9}
+              endDayHour={20}
+            />
+            <Toolbar />
+            <DateNavigator />
+            <TodayButton />
+            <Appointments />
+          </Scheduler>
+        </Paper>
+      </>
     );
   }
 }

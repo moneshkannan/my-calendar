@@ -107,7 +107,7 @@
   margin-bottom: 40px;
 }
 
-.home_content a {
+.home_content .p-links {
   position: relative;
   background-color: #fff;
   padding: 14px 40px;
@@ -118,7 +118,7 @@
   transition: all ease 300ms;
 }
 
-.home_content a:hover {
+.home_content .p-links:hover {
   color: #fff;
   background-color: #12afe87c;
 }
