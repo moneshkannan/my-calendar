@@ -4,7 +4,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Router, Route, Switch } from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
-//import Signup from './pages/Signup';
 import Home from './pages/Home';
 //import ScheduledEvents from './pages/ScheduledEventspage';
 import NewEvents from './pages/NewEventsPage';
@@ -18,7 +17,6 @@ import { ProtectedRoute } from "./service/routeGuard";
 import Notification from './service/NotificationService';
 import history from "./utils/history";
 import Errorpage from './pages/Errorpage';
-// import SignupForm from './pages/SignupForm';
 import LoginForm from './pages/LoginForm';
 import SignupForm from './pages/SignupForm';
 
