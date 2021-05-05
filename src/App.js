@@ -16,6 +16,7 @@ import { ProtectedRoute } from "./service/routeGuard";
 import Notification from './service/NotificationService';
 import history from "./utils/history";
 import Errorpage from './pages/Errorpage';
+import { ForgotForm } from './Components/signuppage/accountbox/Forgotpassword';
 
 
 const App = () => {
@@ -47,8 +48,9 @@ const App = () => {
           <Route path="/scheduledevents" component={ScheduledEvents} />
           <Route path="/newevents" component={NewEvents} />
           <ProtectedRoute path="/contactUS" component={Contactus} />
-          <Route path="/teampage"><Team /> </Route>
-          <Route component={Errorpage} />
+          <Route path="/teampage" component={Team} />
+          <Route path="/forgot_form" component={ForgotForm} />
+          <Route path="*" component={Errorpage} />
         </Switch>
       </Router>
     </div>
