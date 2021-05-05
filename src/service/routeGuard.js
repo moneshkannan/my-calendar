@@ -1,8 +1,11 @@
 import { Route, Redirect } from "react-router-dom";
+import { isLoggedIn, isAdmin } from "./authCheck";
+import Notification from "./NotificationService";
+
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
     return <Route {...rest} render={props => {
-        const isLoggedin = true;
+        const isLoggedin = isLoggedIn();
         if (!isLoggedin) {
             return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
         }
@@ -13,12 +16,12 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
     />
 }
 
-
 const AdminRoute = ({ component: Component, ...rest }) => {
     return <Route {...rest} render={props => {
-        const isAdmin = true;
-        if (!isAdmin) {
-            <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+        const isAdmIn = isAdmin()
+        if (!isAdmIn) {
+            Notification.show({ status: false, message: "You don't have permission to access this page" });
+            < Redirect to={{ pathname: '/', state: { from: props.location } }} />
         }
         else {
             <Component {...props} />

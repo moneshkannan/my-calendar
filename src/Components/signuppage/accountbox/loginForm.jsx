@@ -10,7 +10,11 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
+import { storedataInlocalStorage } from "../../../service/authCheck";
+import history from "../../../utils/history";
+import API from "../../../service/api";
 import axios from "axios";
+import Notification from "../../../service/NotificationService";
 
 export function LoginForm(props) {
   const { switchToSignup } = useContext(AccountContext);
@@ -20,26 +24,37 @@ export function LoginForm(props) {
     password: "",
   });
 
-  const url = "https://appointy-backend.herokuapp.com/api/v1/login";
+  const [isLoading, setIsLoading] = useState(false);
+
   const handle = (e) => {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(newData);
   };
 
   const submit = (e) => {
+    setIsLoading(true);
     e.preventDefault();
-    console.log("submit");
+    const requestData = {
+      email: data.email,
+      password: data.password,
+    };
     axios
-      .post(url, {
-        email: data.email,
-        password: data.password,
-      })
+      .post(`${API}/login`, requestData)
       .then((res) => {
-        console.log(res.data);
+        storedataInlocalStorage(res.data.response_data);
+        Notification.show(res.data);
+        history.push("/");
+        setIsLoading(false);
+        return;
+      })
+      .catch((err) => {
+        if (err.response) {
+          setIsLoading(false);
+          Notification.show(err.response.data);
+          history.push("/login");
+        }
       });
-    window.alert("Login Successfully");
   };
 
   return (
@@ -77,7 +92,7 @@ export function LoginForm(props) {
           submit(e);
         }}
       >
-        Signin
+        {isLoading ? <i className="bx bx-loader-circle bx-spin"></i> : "Signin"}
       </SubmitButton>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink>
