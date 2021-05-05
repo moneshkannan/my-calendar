@@ -9,29 +9,34 @@ function Footer() {
             <div className="row">
             {/* Column1 */}
             <div className="col">
-                <h4>Column 1</h4>
+                <h4>Explore</h4>
                 <ui className="list-unstyled">
-                <li>Column 1</li>
-                <li>Column 1</li>
-                <li>Column 1</li>
+                <li>Home</li>
+                <li>Team</li>
+                <li>Feature</li>
+                <li>Contact Us</li>
+                <li>Calendar</li>
+                <li>Events</li>
+                <li>Meeting</li>
                 </ui>
             </div>
             {/* Column2 */}
             <div className="col">
-                <h4>Column 1</h4>
+                <h4>Follow Us</h4>
                 <ui className="list-unstyled">
-                <li>Column 1</li>
-                <li>Column 1</li>
-                <li>Column 1</li>
+                <li>Linked In</li>
+                <li>Twitter</li>
+                <li>Instagram</li>
+                <li>Facebook</li>
                 </ui>
             </div>
             {/* Column3 */}
             <div className="col">
-                <h4>Column 1</h4>
+                <h4>My Account</h4>
                 <ui className="list-unstyled">
-                <li>Column 1</li>
-                <li>Column 1</li>
-                <li>Column 1</li>
+                <li>Sign Up/Sign In</li>
+                <li>Login</li>
+                <li>Register</li>
                 </ui>
             </div>
             </div>

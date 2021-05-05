@@ -1,6 +1,7 @@
 import React from 'react';
 import "./myacc.css";
 import Navbar from '../Navbar/Navbar'
+import Footer from '../Footer/Footer';
 
 
 function MyAcc() {
@@ -164,8 +165,9 @@ function MyAcc() {
                 </div>
             </div>
         </div>
+        <Footer/>
         </>
-    );
+    )
 }
 
 export default MyAcc;

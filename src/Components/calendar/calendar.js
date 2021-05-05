@@ -18,8 +18,10 @@ export default class Demo extends React.PureComponent {
     super(props);
 
     this.state = {
+      
+      currentDate: '2021-05-5',
+      startDate: new Date(2021, 5, 28, 9, 35),
       data: appointments,
-      currentDate: '2018-06-27',
     };
     this.currentDateChange = (currentDate) => { this.setState({ currentDate }); };
   }
