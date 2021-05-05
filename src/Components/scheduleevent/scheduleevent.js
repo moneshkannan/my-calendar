@@ -4,9 +4,12 @@ import clock from "../../Assets/clock.png";
 import calendar from "../../Assets/calendar.svg";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import './scheduleevent.css';
+import Navbar from '../Navbar/Navbar';
 
 function scheduleevent() {
     return (
+        <>
+        <Navbar active={true}/>
         <div className="scheduleeventmain">
             <div class="container">
             <div class="row">
@@ -59,6 +62,7 @@ function scheduleevent() {
         </div>
     </div>
     </div>
+    </>
     );
 }
 

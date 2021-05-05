@@ -2,7 +2,7 @@ import './App.css';
 import { useEffect } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
@@ -14,8 +14,13 @@ import Confirm from './Components/confirm/confirm';
 import Contactus from './Components/contactUs/Contactus';
 import Team from './Components/team/team';
 //import Views from './Components/views/views'
+import { ProtectedRoute } from "./service/routeGuard";
+import Notification from './service/NotificationService';
+import history from "./utils/history";
+import Errorpage from './pages/Errorpage';
 
-function App() {
+
+const App = () => {
 
   useEffect(() => {
     window.onload = function () {
@@ -33,7 +38,9 @@ function App() {
         </div>
       </div>
 
-      <Router>
+
+      <Router history={history}>
+        <Notification />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Login" component={Signup} />
@@ -43,6 +50,8 @@ function App() {
           <Route path="/newevents" component={NewEvents} />
           <Route path="/contactUS" component={Contactus} />
           <Route path="/teampage" component={Team}/>
+          <ProtectedRoute path="/contactUS" component={Contactus} />
+          <Route component={Errorpage} />
         </Switch>
       </Router>
     </div>

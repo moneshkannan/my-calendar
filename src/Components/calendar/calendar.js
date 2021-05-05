@@ -12,6 +12,7 @@ import {
 
 import { appointments } from '../../data/appointments';
 
+
 export default class Demo extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -27,6 +28,7 @@ export default class Demo extends React.PureComponent {
     const { data, currentDate } = this.state;
 
     return (
+      
       <Paper>
         <Scheduler
           data={data}
@@ -46,6 +48,7 @@ export default class Demo extends React.PureComponent {
           <Appointments />
         </Scheduler>
       </Paper>
+      
     );
   }
 }

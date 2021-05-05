@@ -1,7 +1,10 @@
-.team_img{
-    margin-top: 0px;
+.team {
+  margin-top: 0px;
 }
 
+.team_nav {
+  margin-top: 6rem;
+}
 
 @media only screen and (max-width: 900px) {
   .grid {
