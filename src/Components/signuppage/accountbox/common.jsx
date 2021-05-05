@@ -26,11 +26,12 @@ export const MutedLink = styled.span`
   }
 `;
 
-export const MutedLink1 = styled.a`
+export const MutedLink1 = styled.div`
   font-size: 11px;
-  color: rgba(200, 200, 200, 0.8);
+  color: rgb(73, 63, 252, 0.7);
   font-weight: 500;
   text-decoration: none;
+  cursor: pointer;
   &:hover {
     text-decoration: none;
     color: rgba(200, 200, 200, 0.8);

@@ -14,6 +14,7 @@ import axios from "axios"
 
 export function LoginForm(props) {
   const { switchToSignup } = useContext(AccountContext);
+  const { switchToForgot } = useContext(AccountContext);
 
   const [data, setData] = useState({
     email:"",
@@ -50,7 +51,7 @@ export function LoginForm(props) {
         <Input type="password" placeholder="Password" value={data.password} id ="password" onChange={(e) => {handle(e)}}/>
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
-      <MutedLink1 href="">Forget your password?</MutedLink1>
+      <MutedLink1 onClick={switchToForgot}>Forget your password?</MutedLink1>
       <Marginer direction="vertical" margin="1.6em" />
       <SubmitButton type="submit" onClick={(e)=>{submit(e)}}>Signin</SubmitButton>
       <Marginer direction="vertical" margin="1em"/>
