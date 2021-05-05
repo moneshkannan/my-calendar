@@ -63,7 +63,9 @@ class Navbar extends Component {
                     </li>
 
                     <li>
+                        <Link to="/accpage" style={{ textDecoration: "none", color: "#fff" }}>
                         <a className="nav-links" href="/#">Features</a>
+                        </Link>
                     </li>
 
                     <li>
