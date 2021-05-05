@@ -20,6 +20,8 @@ import Errorpage from './pages/Errorpage';
 import AccPage from './Components/AccPage/MyAcc';
 import LoginForm from './pages/LoginForm';
 import SignupForm from './pages/SignupForm';
+import Forgotform from './pages/Forgotform';
+import otpform from './pages/otpform';
 
 
 const App = () => {
@@ -47,7 +49,9 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Login" component={LoginForm} />
-          <Route path="/signup" component={SignupForm}/>
+          <Route path="/signup" component={SignupForm} />
+          <Route path="/Forgotpassword" component={Forgotform} />
+          <Route path="/Otp" component={otpform} />
           <Route path="/confirm" component={Confirm} />
           <Route path="/calendar" component={Calendar} />
           <Route path="/scheduleevent" component={Scheduleevent} />

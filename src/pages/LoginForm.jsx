@@ -13,9 +13,12 @@ function LoginForm() {
                 <div className="row">
                     <div className="col-md-5">
                         <Login/>
+                        <h4 className="mt-5">Forgot your Password?
+                            <Link to="/Forgotpassword" style={{marginLeft:"1rem"}}>Click here</Link>
+                        </h4>
                         <h4 className="mt-5">Do not have an Account
-                        <Link to="/signup" style={{marginLeft:"1rem"}}>Sign up</Link>
-                    </h4>
+                            <Link to="/signup" style={{marginLeft:"1rem"}}>Sign up</Link>
+                        </h4>
                     </div>
                     <div className="col-md-7 my-auto">
                         <img className="img-fluid w-80" src={loginimg} alt=""/>
