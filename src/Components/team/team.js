@@ -1,9 +1,13 @@
 import React from "react";
 import Team from "../../Assets/team.jpg";
 import './team.css'
+import Navbar from "../Navbar/Navbar";
 
 const team = () => {
   return (
+<>
+    <Navbar active={true}/>
+    <div className="team_image">
     <div className="container text-center">
         <h2 className="h1-responsive font-weight-bold my-5">
             Our team
@@ -35,6 +39,8 @@ const team = () => {
             </div>
         </div>
       </div>
+      </div>
+      </>
   );
 }
 
