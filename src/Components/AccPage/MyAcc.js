@@ -133,8 +133,8 @@ function MyAcc() {
                                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Photo</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                    <label for="exampleInputPassword1">Photo</label><br/>
+                                    <input type="file"id="img" name="img" accept="image/*"></input>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Designation</label>
