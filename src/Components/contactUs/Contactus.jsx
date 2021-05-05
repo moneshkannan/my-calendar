@@ -3,6 +3,7 @@ import classes from "./contactUs.module.css";
 import contact from "../../Assets/contactUs.svg";
 import Navbar from "../Navbar/Navbar";
 
+
 const Contactus = () => {
   return (
     <>
@@ -25,6 +26,7 @@ const Contactus = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };

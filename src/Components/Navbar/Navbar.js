@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Navbar.css';
 import Appointy from '../../Assets/Appointy12.png';
 import { Link } from 'react-router-dom';
+import { isLoggedIn, logout } from "../../service/authCheck";
 
 class Navbar extends Component {
     state = {
@@ -28,7 +29,6 @@ class Navbar extends Component {
     }
 
 
-
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
@@ -52,7 +52,7 @@ class Navbar extends Component {
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     <li>
                         <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a className="nav-links" href="/">Home</a> 
+                            <a className="nav-links" href="/">Home</a>
                         </Link>
                     </li>
 
@@ -64,20 +64,22 @@ class Navbar extends Component {
 
                     <li>
                         <Link to="/accpage" style={{ textDecoration: "none", color: "#fff" }}>
-                        <a className="nav-links" href="/#">Features</a>
+                            <a className="nav-links" href="/#">Features</a>
                         </Link>
                     </li>
 
                     <li>
-                        <Link to="/contactUS" style={{ textDecoration: "none", color: "#fff" }}>  
-                            <a className="nav-links" href="/contactUS">Contact Us</a>
+                        <Link to="/calendar" style={{ textDecoration: "none", color: "#fff" }}>
+                            <a className="nav-links" href="/contactUS">Calendar</a>
                         </Link>
                     </li>
 
                     <li className="nav_btn">
-                        <Link to="/login" className="myAccount" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a className="nav-myAccount" href="login" style={{ textDecoration: "none", color: "#fff" }}>My Account</a>
-                        </Link>
+                        {!isLoggedIn() ?
+                            <Link to="/login" className="myAccount" style={{ textDecoration: "none", color: "#fff" }}>
+                                <a className="nav-myAccount" href="/#" style={{ textDecoration: "none", color: "#fff" }}>My Account</a>
+                            </Link> : <a className=" myAccount nav-myAccount" href="/#" style={{ textDecoration: "none", color: "#fff" }} onClick={() => logout()} >Logout</a>
+                        }
                     </li>
                 </ul>
             </nav>

@@ -32,5 +32,9 @@ const isAdmin = () => {
 }
 
 
+const logout = () => {
+    localStorage.clear()
+}
 
-export { storedataInlocalStorage, isLoggedIn, isAdmin }
+
+export { storedataInlocalStorage, isLoggedIn, isAdmin, logout }

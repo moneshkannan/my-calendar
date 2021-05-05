@@ -5,15 +5,12 @@ import './App.css';
 import { Router, Route, Switch } from 'react-router-dom'
 import Loader from './Assets/Loader.gif';
 import Home from './pages/Home';
-//import ScheduledEvents from './pages/ScheduledEventspage';
-import NewEvents from './pages/NewEventsPage';
 import Calendar from './Components/calendar/calendar';
 import Scheduleevent from './Components/scheduleevent/scheduleevent'
 import Confirm from './Components/confirm/confirm';
 import Contactus from './Components/contactUs/Contactus';
 import Team from './Components/team/team';
-//import Views from './Components/views/views'
-import { ProtectedRoute } from "./service/routeGuard";
+import { ProtectedRoute, AdminRoute } from "./service/routeGuard";
 import Notification from './service/NotificationService';
 import history from "./utils/history";
 import Errorpage from './pages/Errorpage';
@@ -41,7 +38,7 @@ const App = () => {
           <img src={Loader} alt="Loading..." width="250"></img>
         </div>
       </div>
-      
+
 
 
       <Router history={history}>
@@ -53,14 +50,12 @@ const App = () => {
           <Route path="/Forgotpassword" component={Forgotform} />
           <Route path="/Otp" component={otpform} />
           <Route path="/confirm" component={Confirm} />
-          <Route path="/calendar" component={Calendar} />
-          <Route path="/scheduleevent" component={Scheduleevent} />
-          <Route path="/newevents" component={NewEvents} />
-          <Route path="/contactUS" component={Contactus} />
-          <Route path="/accpage"><AccPage/></Route>
-          <Route path="/teampage" component={Team}/>
+          <ProtectedRoute path="/calendar" component={Calendar} />
+          <AdminRoute path="/scheduleevent" component={Scheduleevent} />
+          <Route path="/accpage" component={AccPage} />
           <ProtectedRoute path="/contactUS" component={Contactus} />
-          <Route component={Errorpage} />
+          <Route path="/teampage" component={Team} />
+          <Route path="**" component={Errorpage} />
         </Switch>
       </Router>
     </div>
