@@ -12,6 +12,7 @@ import Calendar from './Components/calendar/calendar';
 import Confirm from './Components/confirm/confirm';
 import Contactus from './Components/contactUs/Contactus';
 import Team from './Components/team/team';
+import Errorpage from './pages/Errorpage';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/newevents" component={NewEvents} />
           <Route path="/contactUS" component={Contactus} />
           <Route path="/teampage"><Team /> </Route>
+          <Route component={Errorpage}/>
         </Switch>
       </Router>
     </div>
