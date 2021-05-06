@@ -193,7 +193,7 @@ const Scheduleevent = () => {
                                         value={data.meetURL}
                                         onChange={handleEvents}
                                     />
-                                </div>
+                                </div><br/>
                                 <div className="submit">
                                     <button
                                         onClick={handleSubmit}
@@ -211,7 +211,7 @@ const Scheduleevent = () => {
                         <div class="col-sm">
                             <div>
                                 <button onClick={fetchUsers}>Add Participants</button>
-                            </div>
+                            </div><br/>
 
                             <div>
                                 <table class="table">
