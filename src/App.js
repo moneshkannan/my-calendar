@@ -9,7 +9,7 @@ import Calendar from './Components/calendar/calendar';
 import Scheduleevent from './Components/scheduleevent/scheduleevent'
 import Confirm from './Components/confirm/confirm';
 import Contactus from './Components/contactUs/Contactus';
-import Team from './Components/team/team';
+//import Team from './Components/team/team';
 import { ProtectedRoute, AdminRoute } from "./service/routeGuard";
 import Notification from './service/NotificationService';
 import history from "./utils/history";
@@ -20,6 +20,7 @@ import SignupForm from './pages/SignupForm';
 import Forgotform from './pages/Forgotform';
 import otpform from './pages/otpform';
 import Loader from './Components/Loader/Loader';
+import Devteam from './pages/Devteam';
 
 
 const App = () => {
@@ -46,7 +47,7 @@ const App = () => {
             <AdminRoute path="/scheduleevent" component={Scheduleevent} />
             <Route path="/accpage" component={AccPage} />
             <ProtectedRoute path="/contactUS" component={Contactus} />
-            <Route path="/teampage" component={Team} />
+            <Route path="/teampage" component={Devteam} />
             <Route path="**" component={Errorpage} />
           </Switch>
         </Router>

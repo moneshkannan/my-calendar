@@ -1,58 +1,66 @@
-.scheduleeventmain{
-    display: flex;
-    margin-top: 100px;
+.scheduleeventmain {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 2rem;
 }
 
-.arrow-col-2{
-    text-align: left;
+.arrow-col-2 {
+  text-align: left;
 }
 
-.vertical{
-    height: 500px;
-    border-left: 1px solid rgb(207, 203, 203);
-    top: 0;
-    height: 600px;
-    position: absolute;
-    left: 50%;
-    margin-left: 190px;
+.vertical {
+  height: 500px;
+  border-left: 1px solid rgb(207, 203, 203);
+  top: 0;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  margin-left: 190px;
 }
 
-.arrow-col-1{
-    margin-left: 30vh;
-} 
-
-.clock{
-    margin-right: 310px;
+.arrow-col-1 {
+  margin-left: 30vh;
 }
 
-.clock_image{
-    width: 20px;
-    height: 20px;
+.clock {
+  margin-right: 310px;
 }
 
-.calendar{
-    margin-right: 210px;
+.clock_image {
+  width: 20px;
+  height: 20px;
 }
 
-.calendar_image{
-    width: 20px;
-    height: 20px;
+.calendar {
+  margin-right: 210px;
 }
 
-.details{
-    font-weight: bold;
+.calendar_image {
+  width: 20px;
+  height: 20px;
 }
 
-.cod{
-    margin-right: 310px;
-    font-weight: bold;
-    color: grey;
+.details {
+  font-weight: bold;
+  font-size: 28px;
 }
 
-.price{
-    margin-right: 100px;
+.cod {
+  margin-right: 310px;
+  font-weight: bold;
+  color: grey;
 }
 
-.backarrow{
-    margin-right: 380px;
+.price {
+  margin-right: 100px;
+}
+
+.backarrow {
+  margin-right: 380px;
+}
+
+/* styles */
+
+.event_label {
+  font-size: 16px;
 }

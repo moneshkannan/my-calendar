@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -19,9 +20,21 @@ function Footer() {
             <div className="col">
                 <h4>Menu</h4>
                 <ui className="list-unstyled">
-                <li>Team</li>
-                <li>Features</li>
-                <li>Contact us</li>
+                    <li>
+                        <Link to="/teampage" style={{ textDecoration: "none", color: "#fff" }}>
+                            <a href="/teampage"  style={{ textDecoration: "none", color: "#fff" }}>Team</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/accpage" style={{ textDecoration: "none", color: "#fff" }}>
+                            <a href="/accpage"  style={{ textDecoration: "none", color: "#fff" }}>Features</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/contactUS" style={{ textDecoration: "none", color: "#fff" }}>
+                            <a href="/contactUS"  style={{ textDecoration: "none", color: "#fff" }}>Contact Us</a>
+                        </Link>
+                    </li>
                 </ui>
             </div>
             {/* Column3 */}

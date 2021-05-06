@@ -27,7 +27,7 @@ function MyAcc() {
                                 </div>
 
                             </div>
-                            <div class="col-md-8 userdetails">
+                            <div class=" col-md-8 userdetails">
                                 <div class="card mb-3">
                                     <div class="card-body">
                                         <div class="row">
