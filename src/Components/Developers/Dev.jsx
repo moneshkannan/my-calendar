@@ -22,7 +22,7 @@ export default function Dev() {
               {cards.map((card, i) => (
                 <div className="column"> {/*column*/}
                   <Card>
-                    <Image ratio={card.imageRatio} src={card.image} />{/*ratio={card.imageRatio} */}
+                    <Image className="rounded-circle" ratio={card.imageRatio} src={card.image} />{/*ratio={card.imageRatio} */}
                     <div className="card-title text-center">{card.title}</div>
                     <div className="card-body">{card.description}</div>
                     
