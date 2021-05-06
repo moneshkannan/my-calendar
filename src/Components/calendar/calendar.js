@@ -24,13 +24,17 @@ export default class Demo extends React.PureComponent {
     this.state = {
       currentDate: new Date(),
       isLoading: true,
-      data: []
+      data: [],
+      role: "user"
     };
     this.currentDateChange = (currentDate) => { this.setState({ currentDate }); };
   }
 
 
   componentDidMount() {
+
+    const role = localStorage.getItem("role");
+    this.setState({ role: role });
 
     const userId = localStorage.getItem("id");
 
@@ -83,11 +87,8 @@ export default class Demo extends React.PureComponent {
   }
 
 
-
-
   render() {
     const { data, currentDate } = this.state;
-
     return (
       <>
         <Navbar active={true} />
@@ -116,9 +117,11 @@ export default class Demo extends React.PureComponent {
               <DateNavigator />
               <TodayButton />
               <Appointments />
-              <AppointmentTooltip
+
+              {this.state.role === "admin" && <AppointmentTooltip
                 showDeleteButton
-              />
+              />}
+
             </Scheduler>
           </Paper>
         }

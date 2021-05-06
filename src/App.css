@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  font-family: serif;
+}
+
 a {
   text-decoration: none;
   list-style: none;
@@ -30,12 +34,13 @@ label {
   font-size: 0.8rem;
 }
 
-input.form-control, input.form-control:focus {
-  background: #F0F0FF;
+input.form-control,
+input.form-control:focus {
+  background: #f0f0ff;
 }
 
 .error {
   position: absolute;
   color: red;
-  font-size: .6rem;
+  font-size: 0.6rem;
 }
