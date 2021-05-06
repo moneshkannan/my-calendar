@@ -27,8 +27,6 @@ const Scheduleevent = () => {
     const [checkAll, setCheckAll] = useState(false);
 
 
-
-
     useEffect(() => {
         if (data.startTime !== "" && data.endTime !== "" && data.eventDate !== "") {
             setIsValid(true);
@@ -39,11 +37,11 @@ const Scheduleevent = () => {
         }
     }, [data])
 
-
     const handleEvents = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
-    }
+        setShow(false)
 
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -79,8 +77,6 @@ const Scheduleevent = () => {
         })
     }
 
-
-
     const fetchUsers = (e) => {
         e.preventDefault();
         setShow(true)
@@ -95,7 +91,9 @@ const Scheduleevent = () => {
         }).then(res => {
             let newArr = [];
             res.data.response_data.data.forEach(element => {
-                newArr.push({ status: false, email: element.email })
+                if (slotAvailablity(element.events) === true) {
+                    newArr.push({ status: false, email: element.email })
+                }
             })
             setUserEmail(newArr);
             Notification.show(res.data);
@@ -109,13 +107,31 @@ const Scheduleevent = () => {
     }
 
 
+    const slotAvailablity = (eventsArr) => {
+
+
+        let s1 = Date.parse(`${data.eventDate}, ${data.startTime}`);
+        let s2 = Date.parse(`${data.eventDate}, ${data.endTime}`);
+        let status = true;
+        eventsArr.forEach((events) => {
+            let t1 = Date.parse(events.eventDetails.startDate);
+            let t2 = Date.parse(events.eventDetails.endDate);
+
+            if ((t1 >= s1 && t1 <= s2) || (t2 >= s1 && t2 <= s2)) {
+                status = false;
+            }
+        })
+
+        return status;
+
+    }
+
+
     const handleEmailCheckEvent = (index, e) => {
         const emails = [...userEmail];
         emails[index].status = !emails[index].status;
         setUserEmail(emails)
     }
-
-
 
     const handleAllEmailCheckEvent = (status) => {
         console.log(status)
