@@ -210,8 +210,7 @@ const Scheduleevent = () => {
 
                         <div class="col-sm">
                             <div>
-                                <button  className="btn btn-primary 
-                                         text-center btn-block" onClick={fetchUsers}>Add Participants</button>
+                                <button  className="btn btn-primary" onClick={fetchUsers}>Add Participants</button>
                             </div><br/>
 
                             <div>
