@@ -6,6 +6,8 @@ import axios from 'axios'
 import history from "../../utils/history";
 import API from "../../service/api";
 import Notification from "../../service/NotificationService";
+import "./form.css"
+import { Link } from 'react-router-dom';
 
 export const Signup = () => {
 
@@ -64,19 +66,25 @@ export const Signup = () => {
 
 
       {formik => (
-        <div>
-          <h1 className="my-4 font-weight-bold .display-4">Sign Up</h1>
+        <div className="form">
+          <h3 className="font-weight-bold" style={{ marginBottom: '1.75rem' }}>Sign Up</h3>
           <Form>
             {/* <TextField label="First Name" name="firstName" type="text" /> */}
             <TextField label="Name" name="name" type="text" />
             <TextField label="Email" name="email" type="email" />
             <TextField label="password" name="password" type="password" />
             <TextField label="Confirm Password" name="confirm_password" type="password" />
-            <button className="btn btn-dark mt-3" type="submit">
+            <button className="btn form_button_submit" type="submit">
               {isLoading ? <i className="bx bx-loader-circle bx-spin"></i> : "Register"}
             </button>
-            <button className="btn btn-danger mt-3 ml-3" type="reset">Reset</button>
+            <button className="btn form_button_reset ml-3" type="reset">Reset</button>
           </Form>
+          <h6 className="form_right" style={{ marginTop: "2rem" }}>
+            Already Have an Account ?
+              <Link to="/Login" style={{ marginLeft: ".5rem", color: "#000" }}>
+              Sign in
+              </Link>
+          </h6>
         </div>
       )}
     </Formik>

@@ -7,6 +7,7 @@ import { storedataInlocalStorage } from "../../service/authCheck";
 import history from "../../utils/history";
 import API from "../../service/api";
 import Notification from "../../service/NotificationService";
+import { Link } from 'react-router-dom';
 
 
 
@@ -59,18 +60,31 @@ export const Login = () => {
 
     >
       {formik => (
-        <div>
-          <h1 className="my-4 font-weight-bold .display-4">Welcome back, Login</h1>
+        <div className="form">
+          <h3 className="font-weight-bold" style={{ marginBottom: '1.75rem' }}>Login</h3>
           <Form>
             <TextField label="Email" name="email" type="email" />
             <TextField label="password" name="password" type="password" />
-            <button className="btn btn-dark mt-3" type="submit">
+            <div className="form_right" style={{ marginTop: "-20px", padding: "10px" }}>
+              <Link to="/Forgotpassword" style={{ color: "#fff", textAlign: "right", fontSize: "13px" }}>
+                Forgot password ?
+              </Link>
+            </div>
+
+            <button className="btn form_button_submit" type="submit">
               {isLoading ? <i className="bx bx-loader-circle bx-spin"></i> : "Login"}
             </button>
-            <button className="btn btn-danger mt-3 ml-3" type="reset">Reset</button>
+            <button className="btn form_button_reset ml-3" type="reset">Reset</button>
           </Form>
+          <h6 className="form_right" style={{ marginTop: "2rem" }}>
+            Do not have an Account
+              <Link to="/signup" style={{ marginLeft: ".5rem", color: "#000" }}>
+              Sign up
+              </Link>
+          </h6>
         </div>
-      )}
-    </Formik>
+      )
+      }
+    </Formik >
   )
 }
