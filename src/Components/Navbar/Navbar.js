@@ -63,14 +63,14 @@ class Navbar extends Component {
                     </li>
 
                     <li>
-                        <Link to="/accpage" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a className="nav-links" href="/#">Features</a>
+                        <Link to="/features1" style={{ textDecoration: "none", color: "#fff" }}>
+                            <a className="nav-links" href="/features">Features</a>
                         </Link>
                     </li>
 
                     <li>
                         <Link to="/calendar" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a className="nav-links" href="/contactUS">Calendar</a>
+                            <a className="nav-links" href="/calendar">Calendar</a>
                         </Link>
                     </li>
 

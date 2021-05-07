@@ -26,8 +26,8 @@ function Footer() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/accpage" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a href="/accpage"  style={{ textDecoration: "none", color: "#fff" }}>Features</a>
+                        <Link to="/features1" style={{ textDecoration: "none", color: "#fff" }}>
+                            <a href="/features"  style={{ textDecoration: "none", color: "#fff" }}>Features</a>
                         </Link>
                     </li>
                     <li>
