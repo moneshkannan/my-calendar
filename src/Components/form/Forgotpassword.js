@@ -6,6 +6,7 @@ import axios from 'axios';
 import history from "../../utils/history";
 import API from "../../service/api";
 import Notification from "../../service/NotificationService";
+import { Link } from 'react-router-dom';
 
 export const Forgotpassword = () => {
   const validate = Yup.object({
@@ -42,15 +43,19 @@ export const Forgotpassword = () => {
       }}
     >
       {formik => (
-        <div>
-          <h1 className="my-4 font-weight-bold .display-4">Forgot password ?</h1>
+        <div className="form">
+
+          <h3 className="font-weight-bold" style={{ marginBottom: '1.75rem' }}>Forgot password ?</h3>
           <Form>
             <TextField label="Email" name="email" type="email" />
-            <button className="btn btn-dark mt-3" type="submit">
+            <button className="btn form_button_submit" type="submit">
               {isLoading ? <i className="bx bx-loader-circle bx-spin"></i> : "Submit"}
             </button>
-            <button className="btn btn-danger mt-3 ml-3" type="reset">Reset</button>
+            <button className="btn form_button_reset ml-3" type="reset">Reset</button>
           </Form>
+          <h6 className="form_right" style={{ marginTop: "2rem" }}>Remembered password!!!
+               <Link to="/Login" style={{ marginLeft: ".5rem", color: "#000" }}>Signin</Link>
+          </h6>
         </div>
       )}
     </Formik>

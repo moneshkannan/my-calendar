@@ -1,0 +1,55 @@
+.form {
+  background: rgb(73, 63, 252);
+  background: linear-gradient(
+    90deg,
+    rgb(130, 114, 247) 0%,
+    rgba(73, 63, 252, 1) 100%
+  );
+  padding: 2rem;
+  border-radius: 2rem;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.form_right {
+  text-align: right;
+}
+
+.form_error {
+  border-bottom: 2px solid #e6425e !important;
+}
+
+.form_label {
+  position: relative;
+  top: 10px;
+}
+
+.form_input {
+  margin-bottom: 2rem;
+}
+
+.form_input ::placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+.form_button_submit {
+  background-color: #fff;
+  padding: 10px 30px;
+  border: none;
+}
+
+.form_button_submit:hover {
+  background-color: rgba(255, 255, 255, 0.829);
+}
+
+.form_button_reset {
+  background-color: #e6425e;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+}
+
+.form_button_reset:hover {
+  color: #fff;
+}
