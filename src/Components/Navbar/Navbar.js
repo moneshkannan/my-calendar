@@ -74,6 +74,12 @@ class Navbar extends Component {
                         </Link>
                     </li>
 
+                    <li>
+                        <Link to="/profile" style={{ textDecoration: "none", color: "#fff" }}>
+                            <a className="nav-links" href="/teampage">Profile</a>
+                        </Link>
+                    </li>
+
                     <li className="nav_btn">
                         {!isLoggedIn() ?
                             <Link to="/login" className="myAccount" style={{ textDecoration: "none", color: "#fff" }}>
