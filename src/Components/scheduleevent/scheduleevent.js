@@ -185,6 +185,7 @@ const Scheduleevent = () => {
                                         name="eventDate"
                                         value={data.eventDate}
                                         onChange={handleEvents}
+                                        min={moment().format("YYYY-MM-DD")}
                                     ></input></div>
 
 
@@ -197,6 +198,7 @@ const Scheduleevent = () => {
                                         name="startTime"
                                         value={data.startTime}
                                         onChange={handleEvents}
+                                        min={moment().format("HH:mm")}
                                     ></input></div>
                                 <div className="endtime form-group">
                                     <label className="event_label">End Time</label><br />
