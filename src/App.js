@@ -47,7 +47,7 @@ const App = () => {
             <ProtectedRoute path="/calendar" component={Calendar} />
             <AdminRoute path="/scheduleevent" component={Scheduleevent} />
             <Route path="/profile" component={Profile} />
-            <ProtectedRoute path="/contactUS" component={Contactus} />
+            <Route path="/contactUS" component={Contactus} />
             <Route path="/teampage" component={Devteam} />
             <Route path="*" component={Errorpage} />
           </Switch>
