@@ -13,13 +13,13 @@ import { ProtectedRoute, AdminRoute } from "./service/routeGuard";
 import Notification from './service/NotificationService';
 import history from "./utils/history";
 import Errorpage from './pages/Errorpage';
-import AccPage from './Components/AccPage/MyAcc';
 import LoginForm from './pages/LoginForm';
 import SignupForm from './pages/SignupForm';
 import Forgotform from './pages/Forgotform';
 import otpform from './pages/otpform';
 import Loader from './Components/Loader/Loader';
 import Devteam from './pages/Devteam';
+import Profile from "./pages/Profile";
 
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
             <Route path="/confirm" component={Confirm} />
             <ProtectedRoute path="/calendar" component={Calendar} />
             <AdminRoute path="/scheduleevent" component={Scheduleevent} />
-            <Route path="/accpage" component={AccPage} />
+            <Route path="/profile" component={Profile} />
             <ProtectedRoute path="/contactUS" component={Contactus} />
             <Route path="/teampage" component={Devteam} />
             <Route path="*" component={Errorpage} />
