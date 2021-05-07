@@ -7,7 +7,7 @@ function Forgotform() {
   return (
     <div>
       <Navbar active={true} />
-      <div className="container" style={{ marginTop: "8rem" }}>
+      <div className="container" style={{ marginTop: "10rem" }}>
         <div className="row">
           <div className="col-12 col-sm-10 col-md-7 col-lg-5">
             <Forgotpassword />
