@@ -1,3 +1,5 @@
+import Notification from "./NotificationService";
+
 const storedataInlocalStorage = (data) => {
     const token = data.token;
     const id = data.user_data._id;
@@ -34,6 +36,7 @@ const isAdmin = () => {
 
 const logout = () => {
     localStorage.clear()
+    Notification.show({ status: true, message: "Successfully logged out.." });
 }
 
 
