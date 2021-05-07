@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './scheduleevent.css';
 import Navbar from '../Navbar/Navbar';
 import moment from "moment";
 import axios from "axios";
 import API from "../../service/api";
 import Notification from "../../service/NotificationService";
-// import Loader from '../Loader/Loader';
 const Scheduleevent = () => {
 
 
@@ -20,25 +19,29 @@ const Scheduleevent = () => {
         participants: []
     })
 
-    // const [isValid, setIsValid] = useState(false);
-    // const [loading, setLoading] = useState(false);
+    const [isValid, setIsValid] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [show, setShow] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [userEmail, setUserEmail] = useState([]);
     const [checkAll, setCheckAll] = useState(false);
 
 
+    useEffect(() => {
+        if (data.startTime !== "" && data.endTime !== "" && data.eventDate !== "") {
+            setIsValid(true);
+        }
+        else {
+            setIsValid(false);
+            setShow(false)
+        }
+    }, [data])
 
     const handleEvents = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
+        setShow(false)
 
-        // if (data.startTime !== "" && data.endTime !== "" && data.eventDate !== "") {
-        //     setIsValid(true);
-        // }
-        // else {
-        //     setIsValid(false);
-        // }
     }
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -74,10 +77,10 @@ const Scheduleevent = () => {
         })
     }
 
-
-
     const fetchUsers = (e) => {
         e.preventDefault();
+        setShow(true)
+        setLoading(true)
         const token = localStorage.getItem("token");
 
         axios.get(`${API}/fetchUsers`, {
@@ -88,15 +91,39 @@ const Scheduleevent = () => {
         }).then(res => {
             let newArr = [];
             res.data.response_data.data.forEach(element => {
-                newArr.push({ status: false, email: element.email })
-            });
+                if (slotAvailablity(element.events) === true) {
+                    newArr.push({ status: false, email: element.email })
+                }
+            })
             setUserEmail(newArr);
             Notification.show(res.data);
+            setLoading(false)
         }).catch(err => {
             if (err.response) {
                 Notification.show(err.response.data);
             }
+            setLoading(false)
         })
+    }
+
+
+    const slotAvailablity = (eventsArr) => {
+
+
+        let s1 = Date.parse(`${data.eventDate}, ${data.startTime}`);
+        let s2 = Date.parse(`${data.eventDate}, ${data.endTime}`);
+        let status = true;
+        eventsArr.forEach((events) => {
+            let t1 = Date.parse(events.eventDetails.startDate);
+            let t2 = Date.parse(events.eventDetails.endDate);
+
+            if ((t1 >= s1 && t1 <= s2) || (t2 >= s1 && t2 <= s2)) {
+                status = false;
+            }
+        })
+
+        return status;
+
     }
 
 
@@ -105,8 +132,6 @@ const Scheduleevent = () => {
         emails[index].status = !emails[index].status;
         setUserEmail(emails)
     }
-
-
 
     const handleAllEmailCheckEvent = (status) => {
         console.log(status)
@@ -122,14 +147,14 @@ const Scheduleevent = () => {
         <>
             <Navbar active={true} />
             <div className="scheduleeventmain">
-                <div class="container">
-                    <div class="row">
+                <div className="container">
+                    <div className="row">
 
-                        <div class="col-sm">
+                        <div className="col-12 col-md-6">
                             <div className="arrow-col-2">
                                 <div className="details">Enter Details</div><br />
-                                <div className="eventname">
-                                    <label>EventName</label><br />
+                                <div className="eventname form-group">
+                                    <label className="event_label">EventName</label><br />
                                     <input
                                         type="text"
                                         id="eventname"
@@ -139,8 +164,8 @@ const Scheduleevent = () => {
                                         onChange={handleEvents}
                                     />
                                 </div>
-                                <div className="description">
-                                    <label>Description</label><br />
+                                <div className="description form-group">
+                                    <label className="event_label">Description</label><br />
                                     <textarea
                                         id="description"
                                         className="descriptiontext mb-1 form-control"
@@ -151,8 +176,8 @@ const Scheduleevent = () => {
                                     ></textarea>
                                 </div>
 
-                                <div className="starttime">
-                                    <label>Event Date</label><br />
+                                <div className="starttime form-group">
+                                    <label className="event_label">Event Date</label><br />
                                     <input
                                         type="date"
                                         id="starttime"
@@ -163,8 +188,8 @@ const Scheduleevent = () => {
                                     ></input></div>
 
 
-                                <div className="starttime">
-                                    <label>Start Time</label><br />
+                                <div className="starttime form-group">
+                                    <label className="event_label">Start Time</label><br />
                                     <input
                                         type="time"
                                         id="starttime"
@@ -173,8 +198,8 @@ const Scheduleevent = () => {
                                         value={data.startTime}
                                         onChange={handleEvents}
                                     ></input></div>
-                                <div className="endtime">
-                                    <label>End Time</label><br />
+                                <div className="endtime form-group">
+                                    <label className="event_label">End Time</label><br />
                                     <input
                                         type="time"
                                         id="endtime"
@@ -183,8 +208,8 @@ const Scheduleevent = () => {
                                         value={data.endTime}
                                         onChange={handleEvents}
                                     ></input></div>
-                                <div className="meet">
-                                    <label>Meet URL</label><br />
+                                <div className="meet form-group">
+                                    <label className="event_label">Meet URL</label><br />
                                     <input
                                         type="text"
                                         id="meet"
@@ -193,12 +218,12 @@ const Scheduleevent = () => {
                                         value={data.meetURL}
                                         onChange={handleEvents}
                                     />
-                                </div><br/>
-                                <div className="submit">
+                                </div>
+                                <div className="submit form-group">
                                     <button
                                         onClick={handleSubmit}
                                         className="btn btn-primary 
-                                         text-center btn-block"
+                                         text-center btn-block btn-lg"
                                     >
                                         {isLoading ? <i className="bx bx-loader-circle bx-spin"></i> : "  Schedule Event"}
                                     </button>
@@ -208,46 +233,49 @@ const Scheduleevent = () => {
 
                         </div>
 
-                        <div class="col-sm">
-                            <div>
-                                <button  className="btn btn-primary" onClick={fetchUsers}>Add Participants</button>
-                            </div><br/>
+                        <div className="col-12 col-md-6 event-bottom">
+                            {isValid && <div className="event_part_button">
+                                <button className="event_part_btn" onClick={fetchUsers}>Add Participants</button>
+                            </div>}
+                            {show ? loading ? <div>  <i className="bx bx-loader-circle bx-spin" style={{ marginLeft: "15rem", marginTop: "10rem", fontSize: "5rem" }}></i> </div> :
 
-                            <div>
-                                <table class="table">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th scope="col">S.NO</th>
-                                            <th scope="col">
-                                                Choose
+                                < div className="event_table">
+                                    <table className="table">
+                                        <thead className="thead-dark">
+                                            <tr>
+                                                <th scope="col">S.NO</th>
+                                                <th scope="col">
+                                                    Choose
                                                 <input
-                                                    type="checkbox"
-                                                    checked={data.status}
-                                                    value={checkAll}
-                                                    onChange={(e) => handleAllEmailCheckEvent(checkAll)} />
-                                            </th>
-                                            <th scope="col">Email</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            userEmail.map((data, i) => {
-
-                                                return <tr key={i}>
-                                                    <th scope="row">{i + 1}</th>
-                                                    <td> <input
+                                                        style={{ marginLeft: "10px" }}
                                                         type="checkbox"
                                                         checked={data.status}
-                                                        value={data.status}
-                                                        onChange={(e) => handleEmailCheckEvent(i, e)} /> </td>
-                                                    <td>{data.email}</td>
-                                                </tr>
-                                            })
-                                        }
-                                    </tbody>
-                                </table>
-                            </div>
+                                                        value={checkAll}
+                                                        onChange={(e) => handleAllEmailCheckEvent(checkAll)} />
+                                                </th>
+                                                <th scope="col">Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                userEmail.map((data, i) => {
 
+                                                    return <tr key={i}>
+                                                        <th scope="row">{i + 1}</th>
+                                                        <td> <input
+                                                            type="checkbox"
+                                                            checked={data.status}
+                                                            value={data.status}
+                                                            onChange={(e) => handleEmailCheckEvent(i, e)} /> </td>
+                                                        <td>{data.email}</td>
+                                                    </tr>
+                                                })
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                : null}
                         </div>
                     </div>
                 </div>

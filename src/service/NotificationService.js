@@ -68,7 +68,6 @@ const Notification = () => {
 };
 
 Notification.show = ({ message, status }) => {
-  console.log(message, status)
   document.dispatchEvent(
     new CustomEvent("notify", {
       detail: {
