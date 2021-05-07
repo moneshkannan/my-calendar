@@ -20,6 +20,7 @@ import Forgotform from './pages/Forgotform';
 import otpform from './pages/otpform';
 import Loader from './Components/Loader/Loader';
 import Devteam from './pages/Devteam';
+import Features from './Components/Features/Features';
 
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route path="/Login" component={LoginForm} />
             <Route path="/signup" component={SignupForm} />
+            <Route path="/features1" component={Features} />
             <Route path="/Forgotpassword" component={Forgotform} />
             <Route path="/Otp" component={otpform} />
             <Route path="/confirm" component={Confirm} />
