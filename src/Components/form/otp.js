@@ -48,15 +48,15 @@ export const Otp = () => {
       }}
     >
       {formik => (
-        <div>
-          <h1 className="my-4 font-weight-bold .display-4">Enter OTP</h1>
+        <div className="form">
+          <h3 className="font-weight-bold" style={{ marginBottom: '1.75rem' }}> Enter OTP</h3>
           <Form>
             <TextField label="OTP" name="otp" type="otp" />
             <TextField label="Password" name="password" type="password" />
-            <button className="btn btn-dark mt-3" type="submit">
+            <button className="btn form_button_submit" type="submit">
               {isLoading ? <i className="bx bx-loader-circle bx-spin"></i> : "Submit"}
             </button>
-            <button className="btn btn-danger mt-3 ml-3" type="reset">Reset</button>
+            <button className="btn form_button_reset ml-3" type="reset">Reset</button>
           </Form>
         </div>
       )}

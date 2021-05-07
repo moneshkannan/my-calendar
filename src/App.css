@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-body {
-  font-family: serif;
-}
-
 a {
   text-decoration: none;
   list-style: none;
@@ -41,7 +37,7 @@ input.form-control:focus {
 
 .error {
   position: absolute;
-  color: red;
+  color: rgba(255, 255, 255, 0.836);
   font-size: 0.6rem;
 }
 
