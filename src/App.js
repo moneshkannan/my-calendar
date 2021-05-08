@@ -21,6 +21,7 @@ import Loader from './Components/Loader/Loader';
 import Devteam from './pages/Devteam';
 import Profile from "./pages/Profile";
 import Features from './Components/Features/Features';
+import Resetform from './pages/Resetform';
 
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
             <ProtectedRoute path="/profile" component={Profile} />
             <Route path="/contactUS" component={Contactus} />
             <Route path="/teampage" component={Devteam} />
+            <Route path="/Resetpassword" component={Resetform} />
             <Route path="*" component={Errorpage} />
           </Switch>
         </Router>
