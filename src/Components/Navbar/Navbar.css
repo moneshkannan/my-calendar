@@ -3,12 +3,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  transition: all ease 800ms;
+  transition: all ease 500ms;
   z-index: 100;
   color: #6668f4;
 }
@@ -19,8 +19,10 @@
     rgb(191, 185, 240) 0%,
     rgba(73, 63, 252, 1) 100%
   );
-  transition: all ease 800ms;
+  height: 70px;
+  transition: all ease 500ms;
   z-index: 100;
+  box-shadow: 0 10px 3rem rgba(0, 0, 0, 0.5);
 }
 
 .navbar-logo {

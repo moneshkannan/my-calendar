@@ -78,10 +78,10 @@ class Navbar extends Component {
                         {!isLoggedIn() ?
                             <Link to="/contactUS" style={{ textDecoration: "none", color: "#fff" }}>
                                 <a className="nav-links" href="/contactUS">Contact Us</a>
-                            </Link> : 
-                        <Link to="/profile" style={{ textDecoration: "none", color: "#fff" }}>
-                            <a className="nav-links" href="/profile">Profile</a>
-                        </Link>
+                            </Link> :
+                            <Link to="/profile" style={{ textDecoration: "none", color: "#fff" }}>
+                                <a className="nav-links" href="/profile">Profile</a>
+                            </Link>
                         }
                     </li>
 

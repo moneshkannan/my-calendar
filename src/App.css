@@ -18,14 +18,18 @@ a {
 
 .loader_div {
   position: absolute;
-  top: 40%;
-  left: 45%;
-  margin-left: -110px;
-  margin-top: -55px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
   font-family: Arial;
   text-align: center;
 }
+
+.load_gif {
+  animation: loader 0.9s linear infinite;
+}
+
 label {
   font-size: 0.8rem;
 }
@@ -44,5 +48,19 @@ input.form-control:focus {
 @media (max-width: 767px) {
   .mobile {
     display: none;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(1.05);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
   }
 }

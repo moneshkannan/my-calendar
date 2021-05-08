@@ -28,7 +28,7 @@ const App = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(false)
+    setTimeout(() => setLoading(false), 2200)
   }, [])
 
   return (
@@ -46,7 +46,7 @@ const App = () => {
             <Route path="/confirm" component={Confirm} />
             <ProtectedRoute path="/calendar" component={Calendar} />
             <AdminRoute path="/scheduleevent" component={Scheduleevent} />
-            <Route path="/profile" component={Profile} />
+            <ProtectedRoute path="/profile" component={Profile} />
             <Route path="/contactUS" component={Contactus} />
             <Route path="/teampage" component={Devteam} />
             <Route path="*" component={Errorpage} />
