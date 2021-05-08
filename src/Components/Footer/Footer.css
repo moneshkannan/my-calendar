@@ -1,18 +1,25 @@
 .main-footer {
   color: white;
   background: #03203c;
-  padding-top: 2em;
+  padding: 2em 0;
   position: relative;
   bottom: 0;
   width: 100%;
+  overflow: hidden;
 }
 
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 10vh;
+.line {
+  /* padding: 10px 0; */
+  height: 1px;
+  width: 100%;
+  background-color: #d3d3d32f;
 }
 
-.content-wrap {
-  flex: 1;
+.main_row {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 25rem));
+  gap: 15px;
+  /* background-color: #03182c; */
 }
