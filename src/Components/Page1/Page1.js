@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './page.css';
 import calendar1 from "../../Assets/calendar1.jpeg";
 import calendar2 from "../../Assets/calendar2.jpg";
-import calendar3 from "../../Assets/calendar3.webp";
+import calendar3 from "../../Assets/calendar3(a).png";
 
 const Page1 = () => {
     return (
