@@ -4,6 +4,9 @@ import './page.css';
 import calendar1 from "../../Assets/calendar1.jpeg";
 import calendar2 from "../../Assets/calendar2.jpg";
 import calendar3 from "../../Assets/calendar3(a).png";
+import P1 from '../../Assets/p1.png';
+import P2 from '../../Assets/p2.png';
+import P3 from '../../Assets/p3.png';
 
 const Page1 = () => {
     return (
@@ -42,6 +45,65 @@ const Page1 = () => {
                 </div>
             </div>
 
+            <div className="testimonials3">
+                <div className="inner3">
+                    <h1>Testimonials</h1>
+                    <div className="border3"></div>
+                        <div className="row3">
+
+                            <div className="col3">
+                                <div className="testimonial3">
+                                    <img src={P1} alt="" />
+                                    <div className="name3">User 1</div>
+                                    <div className="stars3">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                    </div>
+                                    <p>
+                                    I just started using Appointy a week ago. I can't say enough about the product and their customer service. Definitely would recommend it for your business!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="col3">
+                                <div className="testimonial3">
+                                    <img src={P2} alt="" />
+                                    <div className="name3">User 2</div>
+                                    <div className="stars3">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="far fa-star"></i>
+                                    </div>
+                                    <p>
+                                    Nothing but impressed so far. This is by far the most configurable and useable scheduling app I've found. I had all but given up hope. Well done, Appointy!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="col3">
+                                <div className="testimonial3">
+                                    <img src={P3} alt="" />
+                                    <div className="name3">User 3</div>
+                                    <div className="stars3">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="far fa-star"></i>
+                                    </div>
+                                        <p>
+                                        I just worked with Appointy ... and they were awesome! I have been rather impressed by the level of service of you guys.This software is so full featured! Thanks v much and I am sure I will 'go live' very soon.
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     )
 }
