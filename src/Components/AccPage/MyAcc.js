@@ -4,6 +4,7 @@ import axios from 'axios';
 import API from '../../service/api';
 import Loader from '../Loader/Loader';
 import Notification from "../../service/NotificationService";
+import Footer from '../Footer/Footer';
 
 function MyAcc() {
 
@@ -243,6 +244,7 @@ function MyAcc() {
                             </div>
                         </div>
                     </div>
+                    <Footer/>
                 </div>
             }
 
