@@ -3,7 +3,7 @@ import "./myacc.css";
 import axios from 'axios';
 import API from '../../service/api';
 import Loader from '../Loader/Loader';
-
+import Notification from "../../service/NotificationService";
 
 function MyAcc() {
 
@@ -34,15 +34,16 @@ function MyAcc() {
         //console.log(newupdate)
     }
     function submit(e) {
-        //console.log("submit")
         e.preventDefault();
         axios.patch(updateURL, {
             name: update.name
+        }).then(res => {
+            Notification.show(res.data)
+        }).catch(err => {
+            if (err.response) {
+                Notification.show(err.response)
+            }
         })
-            .then(res => {
-                //console.log(res.update)
-                window.location.reload()
-            })
     }
     //change password
     const changePasswordURL = `${API}/changePassword`
@@ -50,25 +51,28 @@ function MyAcc() {
         email: "",
         newPassword: ""
     })
-    function passwordhandle(e) {
+
+
+    const passwordhandle = (e) => {
         const addPassword = { ...password }
         addPassword[e.target.id] = e.target.value
         setPassword(addPassword)
-        console.log(addPassword)
     }
+
+
     function passwordsubmit(e) {
-        console.log("submit")
         e.preventDefault();
+
         axios.post(changePasswordURL, {
             email: user.email,
             newPassword: password.newPassword
+        }).then(res => {
+            Notification.show(res.data)
+        }).catch(err => {
+            if (err.response) {
+                Notification.show(err.response)
+            }
         })
-
-            .then(res => {
-                console.log(res.password)
-                // window.location.reload()
-            })
-        console.log(user.email, password.newPassword)
     }
     function showPassword() {
         var password = document.getElementById("newPassword")
@@ -160,7 +164,14 @@ function MyAcc() {
                                                             </div>
                                                             <div className="form-group">
                                                                 <label htmlFor="exampleInputPassword2">set New Password</label>
-                                                                <input type="password" onchange={(e) => { passwordhandle(e) }} className="form-control" id="newPassword" placeholder="Password" />
+                                                                <input
+                                                                    type="password"
+                                                                    value={password.newPassword}
+                                                                    onChange={(e) => passwordhandle(e)}
+                                                                    className="form-control"
+                                                                    id="newPassword"
+                                                                    placeholder="Password"
+                                                                />
                                                                 <div className="m-1">
                                                                     <input type="checkbox" onClick={() => showPassword()} />
                                                                     <span style={{ marginLeft: "1rem" }}>show Password</span>
@@ -198,7 +209,8 @@ function MyAcc() {
                                                         <form>
                                                             <div className="form-group">
                                                                 <label htmlFor="exampleInputPassword1">Name</label>
-                                                                <input type="text" className="form-control" onChange={(e) => handle(e)} id="name" value={update.name} placeholder={user.name} />
+                                                                <input
+                                                                    type="text" className="form-control" onChange={(e) => handle(e)} id="name" value={update.name} placeholder={user.name} />
                                                             </div>
                                                             <div className="form-group">
                                                                 <label htmlFor="exampleInputPassword1">Email</label>

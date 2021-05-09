@@ -11,16 +11,16 @@
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
-  background: transparent; 
+  background: transparent;
 }
- 
+
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: rgb(170, 196, 241); 
+  background: rgb(170, 196, 241);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #dee3f7; 
+  background: #dee3f7;
 }
 
 a {
