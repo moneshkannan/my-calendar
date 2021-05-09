@@ -16,6 +16,7 @@
 
 .content {
   padding-top: 32rem;
+  padding-bottom: 3rem;
   color: #000;
   display: flex;
   /* align-items: center; */
@@ -38,13 +39,23 @@
 }
 
 .contactUs_para {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.5;
+}
+
+.contactmail {
+  font-size: 25px;
+  color: blueviolet;
+}
+
+.contactmail:hover {
+  text-decoration: none;
+  color: rgb(188, 133, 240);
 }
 
 @media (max-width: 960px) {
   .contactUs_para {
-    font-size: 13px;
+    font-size: 20px;
     line-height: 1.5;
   }
 }
@@ -71,7 +82,7 @@
   }
 
   .contactUs_para {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.5;
   }
 }
@@ -84,7 +95,7 @@
   }
 
   .contactUs_para {
-    font-size: 12px;
+    font-size: 20px;
     line-height: 1.5;
   }
 
