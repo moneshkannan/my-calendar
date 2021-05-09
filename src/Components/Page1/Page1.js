@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import './page.css';
 import calendar1 from "../../Assets/calendar1.jpeg";
 import calendar2 from "../../Assets/calendar2.jpg";
-import calendar3 from "../../Assets/calendar3.webp";
+import calendar3 from "../../Assets/calendar3(a).png";
+import P1 from '../../Assets/p1.png';
+import P2 from '../../Assets/p2.png';
+import P3 from '../../Assets/p3.png';
 
 const Page1 = () => {
     return (
@@ -18,20 +21,14 @@ const Page1 = () => {
 
                 <div className="home_middle_content">
                     <div>
-                        <h3 className="home_h3">you will now goin yo laern more</h3>
-                        <p className="home_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                        corporis sunt qui incidunt praesentium dolorem quos officiis minus
-                        nihil totam tempora cor Lorem ipsum dolor sit amet consectetur
-              adipisicing elit</p>
+                        <h3 className="home_h3">Appointy - simple, functional, powerful: no compromises!</h3>
+                        <p className="home_p">Our online scheduling software has everything you need to grow and manage your business in one easy to use and powerful user interface</p>
                     </div>
                     <div style={{ marginTop: "25px", marginBottom: "40px" }}>
-                        <h3 className="home_h3">you will now goin yo laern more</h3>
-                        <p className="home_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                        corporis sunt qui incidunt praesentium dolorem quos officiis minus
-                        nihil totam tempora cor Lorem ipsum dolor sit amet consectetur
-              adipisicing elit</p>
+                        <h3 className="home_h3">Implement social distancing guidance and adapt to the post-COVID19 world</h3>
+                        <p className="home_p">Appointy’s online scheduling software can help you manage occupancy and follow local safety guidelines while reopening business after COVID19</p>
                     </div>
-                    <a className="home_learn_more" href="/#"> Learn More  </a>
+                    <Link className="homefeatures" to="/features1"><a className="home_learn_more" href="/features"> Learn More </a></Link>
                 </div>
                 <div className="home_middle_images">
                     <div className="home_middle_image">
@@ -42,6 +39,65 @@ const Page1 = () => {
                 </div>
             </div>
 
+            <div className="testimonials3">
+                <div className="inner3">
+                    <h1>Testimonials</h1>
+                    <div className="border3"></div>
+                        <div className="row3">
+
+                            <div className="col3">
+                                <div className="testimonial3">
+                                    <img src={P1} alt="" />
+                                    <div className="name3">User 1</div>
+                                    <div className="stars3">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                    </div>
+                                    <p>
+                                    I just started using Appointy a week ago. I can't say enough about the product and their customer service. Definitely would recommend it for your business!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="col3">
+                                <div className="testimonial3">
+                                    <img src={P2} alt="" />
+                                    <div className="name3">User 2</div>
+                                    <div className="stars3">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="far fa-star"></i>
+                                    </div>
+                                    <p>
+                                    Nothing but impressed so far. This is by far the most configurable and useable scheduling app I've found. I had all but given up hope. Well done, Appointy!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="col3">
+                                <div className="testimonial3">
+                                    <img src={P3} alt="" />
+                                    <div className="name3">User 3</div>
+                                    <div className="stars3">
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="fas fa-star"></i>
+                                        <i className="far fa-star"></i>
+                                    </div>
+                                        <p>
+                                        I just worked with Appointy ... and they were awesome! I have been rather impressed by the level of service of you guys.This software is so full featured! Thanks v much and I am sure I will 'go live' very soon.
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     )
 }
