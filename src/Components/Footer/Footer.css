@@ -12,7 +12,7 @@
   /* padding: 10px 0; */
   height: 1px;
   width: 100%;
-  background-color: #d3d3d32f;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .main_row {
@@ -22,4 +22,16 @@
   grid-template-columns: repeat(auto-fit, minmax(20rem, 25rem));
   gap: 15px;
   /* background-color: #03182c; */
+}
+
+@media (max-width: 600px) {
+  .copy_right {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  .copy_right {
+    font-size: 10px;
+  }
 }

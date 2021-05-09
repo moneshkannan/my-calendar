@@ -48,7 +48,7 @@ function Footer() {
             </div>
         </div>
         <div className="line"></div>
-        <div style={{ backgroundColor: "#03182c", textAlign: "center", color: "rgba(255,255,255,0.5)", padding: "15px" }}>
+        <div style={{ backgroundColor: "#03182c", textAlign: "center", color: "rgba(255,255,255,0.5)", padding: "15px" }} className="copy_right">
             © Copyright 2021 Appointy | All rights reserved | Terms Of Service | Privacy
         </div>
 

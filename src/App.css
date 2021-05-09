@@ -9,6 +9,21 @@ a {
   list-style: none;
 }
 
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #2827cc;
+}
+
 .loader {
   position: fixed;
   inset: 0px;
