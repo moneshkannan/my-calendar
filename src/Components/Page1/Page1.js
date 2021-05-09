@@ -21,7 +21,7 @@ const Page1 = () => {
 
                 <div className="home_middle_content">
                     <div>
-                        <h3 className="home_h3">Appointy - simple, functional, powerful: no compromises!</h3>
+                        <h3 className="home_h3">Appointy - simple, functional, powerful : no compromises!</h3>
                         <p className="home_p">Our online scheduling software has everything you need to grow and manage your business in one easy to use and powerful user interface</p>
                     </div>
                     <div style={{ marginTop: "25px", marginBottom: "40px" }}>
