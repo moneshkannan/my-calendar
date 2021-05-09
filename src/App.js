@@ -22,6 +22,7 @@ import Devteam from './pages/Devteam';
 import Profile from "./pages/Profile";
 import Features from './Components/Features/Features';
 import Resetform from './pages/Resetform';
+import Chatbot from "./Components/chatBot/Chatbot";
 
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
             <Route path="/Resetpassword" component={Resetform} />
             <Route path="*" component={Errorpage} />
           </Switch>
+          <Chatbot/>
         </Router>
       }
     </>
