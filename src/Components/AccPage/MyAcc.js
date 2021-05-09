@@ -39,7 +39,7 @@ function MyAcc() {
         axios.patch(updateURL, {
             name: update.name
         }).then(res => {
-            Notification.show(res.data)
+            Notification.show({ status: true, message: "Updated successfully..." });
         }).catch(err => {
             if (err.response) {
                 Notification.show(err.response)
