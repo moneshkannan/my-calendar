@@ -21,20 +21,14 @@ const Page1 = () => {
 
                 <div className="home_middle_content">
                     <div>
-                        <h3 className="home_h3">you will now goin yo laern more</h3>
-                        <p className="home_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                        corporis sunt qui incidunt praesentium dolorem quos officiis minus
-                        nihil totam tempora cor Lorem ipsum dolor sit amet consectetur
-              adipisicing elit</p>
+                        <h3 className="home_h3">Appointy - simple, functional, powerful: no compromises!</h3>
+                        <p className="home_p">Our online scheduling software has everything you need to grow and manage your business in one easy to use and powerful user interface</p>
                     </div>
                     <div style={{ marginTop: "25px", marginBottom: "40px" }}>
-                        <h3 className="home_h3">you will now goin yo laern more</h3>
-                        <p className="home_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                        corporis sunt qui incidunt praesentium dolorem quos officiis minus
-                        nihil totam tempora cor Lorem ipsum dolor sit amet consectetur
-              adipisicing elit</p>
+                        <h3 className="home_h3">Implement social distancing guidance and adapt to the post-COVID19 world</h3>
+                        <p className="home_p">Appointy’s online scheduling software can help you manage occupancy and follow local safety guidelines while reopening business after COVID19</p>
                     </div>
-                    <a className="home_learn_more" href="/#"> Learn More  </a>
+                    <Link className="homefeatures" to="/features1"><a className="home_learn_more" href="/features"> Learn More </a></Link>
                 </div>
                 <div className="home_middle_images">
                     <div className="home_middle_image">
