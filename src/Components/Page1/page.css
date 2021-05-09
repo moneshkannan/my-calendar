@@ -99,6 +99,11 @@
   margin-left: 5rem;
 }
 
+.homefeatures:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .home_content h1 {
   font-weight: bold;
   font-family: serif;
@@ -132,6 +137,12 @@
   text-decoration: none;
   transform: all ease 500ms;
   transform: scale(1.5) !important;
+}
+
+.home_learn_more:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #3ba4f5;
 }
 
 .testimonials3{
