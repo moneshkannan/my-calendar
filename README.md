@@ -1,3 +1,2 @@
-# for start the Application
-
-npm start
+INTERNS TEAM 4
+  Appointy
